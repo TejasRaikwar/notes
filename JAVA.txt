@@ -2276,3 +2276,99 @@ Buffered Streams:
                new ClassA().fileoperations();
           }
      }
+
+
+DataStreams:
+     - Data Streams are used to treansfer primitive datatypes in a secure manner. these are also knows as Filter Streams.
+
+     DataInput:
+          DataInputStream
+               -->     FileInputStream
+             (source)  
+     DataOutput:
+          DataOutputStream
+               -->     FileOutputStream
+            (source) 
+
+
+     program:
+          public class ClassA{
+               void fileoperations() throws Exception{
+                    System.out.println("Implementing DataStreams");
+                    DataOutputStream = dos = new DataOutputStream(new FileOutputStream("filepath"));
+                    System.out.println("Connection created.");
+
+                    dos.writeInt(1000);
+                    dos.writeChar('A);
+                    dos.writeBoolean(true);
+                    dos.writeInt(2000);
+
+                    System.out.println("Data Entered Securely");
+                    dos.close();
+
+                    DataInputStream dis new DataInputStream(new FileInputStream("filepath"));
+                    System.out.println(dis.readInt());
+                    System.out.println(dis.readchar());
+                    System.out.println(dis.readBoolean());
+                    System.out.println(dis.readInt());
+
+                    /*
+                    In DataStreams in which order we are entering the data in the same order we need to retrieve it back
+                    */
+
+                    System.out.println()
+                    System.out.println("Data Retrieved")
+                    dis.close()
+               }
+               public static void main(String[] args){
+                    new ClassA.fileoperations();
+               }
+          }
+
+Serialization:
+     - The process of writing an object into a file if known as Serialization.
+     - In other words it is a process of converting an object from java supported version to network supported version or file supported version.
+     - In order to perform this serialization we need to use object streams.
+
+     program:
+          import java.io.Serializable;
+          public class ClassA implements Serializable{
+               transient int a = 10;
+               int b = 20;
+          }
+
+          public class ClassB implements Serializable{
+               int x = 100;
+               int y = 200;
+          }
+
+          public class ClassC{
+               void fileoperations throws Exception{
+                    System.out.println("Implementing ObjectStreams");
+                    ClassA aobj1 = new ClassA();
+                    ClassB bobj1 = new ClassB();
+                    System.out.println(aobj1.a+" "+aobj1.b);
+                    System.out.println(bobj1.a+" "+bobj1.b);
+
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("filepath.ser"));
+                    System.out.println("Connection Created");
+
+                    oos.writeObject(aobj1);
+                    oos.writeObject(bobj1);
+
+                    System.out.println("Serialization done"+"\n");
+                    oos.close();
+
+                    System.out.println("De-serialization started");
+                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("filepath.ser"));
+
+                    ClassA aobj2 = (ClassA)ois.readObject();
+                    ClassB bobj2 = (ClassB)ois.readObject();
+                    System.out.println(aobj2.a+" "+aobj2.b);
+                    System.out.println(bobj2.a+" "+bobj2.b);
+                    ois.close();
+               }
+               public static void main(String[] args){
+                    new ClassC.fileoperations();
+               }
+          }
