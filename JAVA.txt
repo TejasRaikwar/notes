@@ -1,0 +1,2278 @@
+understanding java class:
+     1) A java class is a idea of an object.
+     2) java class : 
+          a)pre-defined class:
+                    Every java predefined class always stats with a capital 	letter.[ex. String and System]
+          b)User Predefined classes :
+                    Java user defined classes can starts with BOTH small letters & Capital letter.
+     3)  basic questions :
+     1) can we create an empty java file and run it?
+     Ans: - We can compile emty java file but .class file wont be generated.
+          - So, as class file is absent/not generated, we wont be able to run.
+     2) can we create an empty java class and compile and run it?
+     Ans: - we can compile empty class file and it will also generate class file but it wont run because main method is not declared/absent in the class file.
+          - it will give error : "main method not found"
+     3) Is it mandatory that java class name and file name should be same?
+     Ans: - if the class is declared as public,it is mandatory to save the class file and file name should be same.
+          - if the class is declared as default, then it is not mandatory to have file name and class name same.
+     4) What are predefined user defined classes/methods and predefined defined classes/methods?
+     5) Does JVM executes user defined methods automatically?
+     Ans: User defined methods and pre defined methods only when we are calling it.
+          ---- Except : main method. ----
+     6) How many user defined methods we can write in a class and what is the order of their execution?
+     Ans : - We can create any number of methods.
+          - methods will be get executed in the order , in which we are calling them.
+
+==> understanding Object Class: 
+     -> Object class is present in java.lang package.
+     -> java.lang package is by default imported into every java program.(So, no need to 	import it specifically.)
+     -> Object class acts as a parent class for every java Class(either pre-defined or user-defined classes.) 
+     -> Object class is the first class in the java class hierarchy.
+     -> Object class has 11 important methods, all these 11 methods can be acccessed by every other class object.
+     
+   
+-->Methods in Object class : 
+   1) public int hashCode() :
+       - Return a hashCode value for the object.
+	   - hashCode() does not provides the address location of the objects.
+	   - It generates unique identification number for your class.
+	   - It is used to distinguish two objects seperatelly.
+	   - Return type : int.
+   2) protected void finalize() throws Throwable : Called by the garbage collector.
+   3) public boolean equals (Object obj) : used for comparing two objects
+   4) protected object clone() throw clone not supported exception : create exact copy of the object.
+   5) public String toString() : Returns a string representation of the object.
+   6) public final Class getClass() : Returns present class referance.
+   7) public final void notify(),
+      notifyAll(),
+	  wait(),
+	  wait(long timeout),
+	  wait(long timeout,int nanos) :   All these methods are used in java multithreading, which plays crucial role in synchronization.
+
+Object : 
+     1) objects are created from a class
+     2) to create an object first we need to write new keyword, after that we need to initialize it iwth the help of a constructor, and constructor name will be same as class name
+     3) We can create multiple objects of one class.
+
+Variables :
+     1) A variable Provides identity to a memory location.
+     2) With the help of variable, we can process the information easily
+
+Naming Conventions of a java identifiers:
+     1) The name should start with an alphabet or underscore (_).
+     2) A java identifier never starts with a number, But we can use any number combinations between 0 -9.
+     3) Only "2" symbols allowed are, $ and _.
+     4) There should not be any spaces between the identifier names.
+     5) An identifier name should contain at least one character.
+     6) We can tale any length for identifier name.
+     7) As JAVA is a "case sensitive", 'int a = 10' & 'int A = 20' both are different.
+     8) In Java, all keywords are treated as reserved words. So it is recommended that you do not declare variables using these keywords.
+
+
+
+
+Variables:
+     --- Variables are the data containers that save the data values during Java program execution.
+     --- There are three types of variables in java:
+               a) Instance Variables
+               b) Static Variables
+               c) Local variables
+
+     a) Instance Variables:
+          1) the variables which are declared inside a class, outside any method or block or a constructor are known as instance variables.
+          2) We can access instance variable in 2 ways: 
+               a) by using identifier name.
+               b) By using class object./instance
+          3) For instance variables JVM will automatically initialize them their default values of the data types.
+          4) If instance variablename and local variable name both are same then the first priority will be given to local variable.
+          5) For every instance a saperate copy will be created (means how many objects we are creating inside a class those many copies of instance variables will be created.)
+          
+     b) Static Variables: 
+          1) These variables are declared inside a class, outside any method, or a block, or a constructor with the help of static keyword.
+          2) Static variables will be initialize at the time of class loading
+          3) We can access a static variable in three ways:
+               a) By using identifier name.
+               b) by using class object.
+               c) By using className
+          4) For static variables JVM will automatically initialize them with their default values of the data types.
+          5) If static variable and lcoal variables are having same name then the first priority will be given to local Variables
+          6) ** A static vaible can never be a local variable.
+          7) {
+               There will be only one copy of static varible throught the program.
+          }
+
+     c) Local variables:
+          1) The variables which are declered inside a method or a block, or a constructor are known as local variables.
+          2) We can access a lcoal only with the help of its identifier name.
+          3) The scope of a local variable is only within the method. ( means we cant access a local variable outside the method.)
+          4) For local variable JVM will not assign any default values, it is the responsibility of the programmer to initialize them.
+          5) ** If we are declaring a local variable and if we are not using it, then our programm will be executes normally, but if we are using a local varible without initialization we will be getting compile time error.
+
+Constructor : 
+          1) Constructor is used to initialize a class object.
+          2) constructor is used to provide the values for the instance variables.
+
+     Rules : 
+          1) Constructor name should be same as class name.
+          2) Constructor should not be having return type.
+          
+     Types of constructor: 
+          a) Parameterized Constructor.
+          b) Non-Paarameterized Constructor.
+
+     Que. When a constructor will be executed? or
+          How to call a Java Constructor?
+     Ans: Constructor will be executed simultaneously whenever we are creating an object.
+
+
+
+     ->  default constructor is same like non Parameterized constructor
+          => default constructor => provided by the compiler.
+          => non-Parameterized constructor => provided by the programmer
+     -> can we declare constructor as private?
+          => yes
+     
+     => IF WE DECLARE A CONSTRUCTOR AS PRIVATE THEN WE CAN RISTRICT OBJECT CREATION OF OUR CLASS IN OTHER CLASSES.
+     => CONSTRUCTOR OVERLOADING IS POSSIBLE,  OVERRIDING IS NOT POSSIBLE.
+
+
+Operators: 
+     1) Increment/decrement Operators:
+          a) Increment Operator:
+                    - pre-Increment
+                    - post-Increment
+
+          b) decrement Operator:
+                    - pre-decrement
+                    - post-decrement
+
+     2) Arithmetic Operators
+     3) Relational Operators
+     4) Logical Operators
+
+
+Control Statement : 
+	 1) Selection: 
+               a) if
+               b) if-else
+               c) if-else-if
+               d) switch
+
+      2) Iteration :
+               a) while
+               b) do-while
+               c) for
+               d) for-each
+               
+      3) Jump :
+               a) break
+               b) continue
+               c) return
+
+TypeCasting : 
+     It is a process converting one datatype into another datatype.(Except Boolean)
+          Types:
+               a) Implicit TypeCasting (widening) :
+                         - smaller datatype => Larger datatype
+                         - Implicit typecasting is done by compiler automatically.
+                         - In implicit typecasting there is no chance of loss of information.
+               b) Explicit TypeCasting (narrowing) :
+                         - Larger datatype => Smaller datatype
+                         - Explicit typecasting is not done by the compiler, it`s programmers duty/job.
+                         - In Explicit typecasting there may be a chance of loss of information.
+
+                         - [minimum range + (result - maximumRange -1)]
+                           ex : -128 + (500-127-1) ===> -128+(500-128) ==>-128+(372)
+                                 ==> 244
+               Note :  In explicit type casting if we are trying to store a value which is more than the range of the destination data type we will not be getting any error or an exception the value will be reduced within the range of the destination data type.
+
+
+**   Premitive Data types : itn, byte, short, float, double, char, boolean 
+**   Wrapper classes : Int, Byte, Short, Long, Double, Character,
+
+          data type ==> class Object(wrapper)  :: auto-boxing 
+
+              process of converting Premitive datatypes into its respective Wrapper classes is known as "auto boxing".
+          data type <== class Object(wrapper)  :: auto-Un_boxing 
+               vice-versa 
+           
+          Why to convert :   to store data into conllections : conllections does not allow premitive data types.  they allows only Objects.
+   
+          - Wrapper Classes : 
+              - In java technology if we want to represent, a group of objects in the form of an object then we have to use "Collection Framework", 
+              - But collection will not allow datatypes, they allows only objects.
+              - If we want to store premitive datatypes in collection objects, first we need to convert the premitive data into object form and then store it in the collection objects.
+              - For 8 premitive data types there are 8 wrapper classes.
+              - *** Java wrapper classes are a set of pre-defined classes which are prsent in java.lang package that provides an object representation for each of the 8 premitive data types.
+
+          - Array : Array collects multiple elements of similar datatypes in a contineous block of memory.
+            ex :   
+                   int arr[] = {10,20,30,40,50};
+
+                         length ->   1   2    3     4   5
+                              arr => | 10 | 20 | 30 | 40 | 50 |
+                              index ->   0    1    2    3   4
+             Drawbacks :
+                  - Array length is fixed.
+                  - Array does no allow heterogeneous datatypes.
+                  - Array does not have any method support.
+
+                    int    -> Integer
+                    byte   -> Byte  
+                    short  -> Short
+                    long   -> Long
+                    float  -> Float
+                    double -> Double
+                    char   -> Character
+                   boolean -> Boolean
+
+
+               datatype ---> Class Object ---> Collections
+                              (Wrapper)
+               
+               data type ==> class Object(wrapper)  :: auto-boxing 
+               data type <== class Object(wrapper)  :: auto-Un_boxing 
+
+          Collection Framework :   available in ( java.util )
+               - ArrayList 
+               - LinkedList
+               - Vector                  *** Note : All Collection classes will not allow
+               - HashSet                            datatypes, they will allow only Objects.
+               - LinkedHashset
+               - TreeSet
+               - PriorityQueue
+               - HashMap
+               - HashTable
+
+
+     Example for autoboxing : 
+       byte b  = 10;
+       Byte b1 = Byte.valueOf(b); // ***
+       Byte b2 = b;
+
+       premitive DataType  == valueOf() ==> WrapperClassObject
+                              AUTOBOXING
+     Example of un-boxing : 
+       Byte b  = new Byte("10");
+       byte b1 = b.byteValue();  // ***
+
+       WrapperClassObject == abcValue() => Premitive Data TypeCasting
+                           AUTO-UNBOXING
+
+     Key Points :                
+          - All most all wrapper classes define two constructors, one can take res premitive data types as a parameter and other can take string as a parameter (except Character)
+          - Character wrapper class defines only one constructor which can take char premitive data type as a parameter. It will not accept strings.
+          - If we are passing string as parameter in boolean wrapper class then:
+               a) If the argument i true then the result also will be true irrespective of the data ans case sensitiveness.
+               b) If the argument is false then the result also will be false irrespective of the data ans case sensitiveness.
+               c) Other than true/false any other will give you the resutlt as false.
+
+
+
+
+ - Scanner class is present in java.util package, if we want to use Scanner class object.
+ - By using Scanner class we can read the input from the console.
+ - It is available from java 1.5 version
+      - nextByte()    -> accepts a byte.
+      - nextShort()   -> accepts a short.
+      - nextInt()     -> accepts a int.
+      - nextLong()    -> accepts a long.
+      - next()        -> accepts a line of word.
+      - nextLine()    -> accepts a line of String
+      - nextBoolean() -> accepts a Boolean.
+      - nextFloat()   -> accepts a Float.
+      - nextDouble()  -> accepts a double.
+
+
+
+Packages : 
+     - A package consists of similar types of data Classes, Interfaces and Enums 
+     - Types : 
+          -> pre-Defines package
+          -> user-Defines package
+     - In java there are nearly 5000 pre-defined packages are present.
+     - In every java program one package by default it will be imported & that is "java.lang". (java.lang package consist of most commonly used classes and interfaces by the programmers.)
+     - We can access the members of one class from another class of same package without using "import" Statement
+     - "import" Statement is used to connect classes in java application of different packages.
+     - In every java programm package statement will be the first statement.
+     
+     Que: How to acces a package from another package?
+     Ans: We can import a class from one package into another package in the below mentioned "3" ways:
+          1) By using packageName.ClassName ;
+               [Only the specified Class will be imported]
+          2) By using import packageName.* ;
+               [All the classes which were present in that package will be imported]
+          3) By using Fully Qualified ClassName.
+               [ We can import a class into our program without import statement]
+
+            //pack1 :: ClassA
+            package com.pack1
+            public class ClassA
+            {
+               public void meth1(){
+                    System.out.println("Class A method called");
+               }
+            }
+
+              //pack1 :: ClassB
+            package com.pack1
+            public class ClassB
+            {
+               public void meth2()
+               {
+                    System.out.println("Class B method called");
+               }
+            }
+
+             //pack2 :: ClassX
+            package com.pack2
+
+            // import com.pack1.ClassA       // 1st Way 
+            // import com.pack1.ClassB
+            import com.pack1.*               // 2nd Way     
+            
+            public class ClassX
+            {
+               public static void main()
+               {
+                    
+                    ClassA aobj = new ClassA;
+                    aobj.meth1();
+
+                    com.pack1.ClassB bobj = new com.pack1.ClassB;     // 3rd Way
+                    bobj.meth2();
+               }
+            }
+
+
+            Output : 
+                Class A method called
+                Class B method called
+
+
+Access modifiers : 
+          -----------------------------------------------------------------------
+          |   modifier    |   class  |   package    |    sub-class  |    world  |
+          |---------------------------------------------------------------------|
+          |   public      |    yes   |    yes       |       yes     |     yes   |
+          |               |          |              |               |           |
+          |   protected   |    yes   |    yes       |       yes     |           |
+          |               |          |              |               |           |
+          |   default     |    yes   |    yes       |               |           |
+          |               |          |              |               |           |
+          |   private     |    yes   |              |               |           |
+          -----------------------------------------------------------------------
+          
+                            private > default > protected > public
+
+UnderStanding "this" keyword : 
+   - this is used to resolve ambiguity between instance variable and local variable.
+   - It is used to call present class method.
+   - It is used to return an instance of the present class
+
+   Note : We cant use this keyword in static block
+          
+          public class ClassA
+          {
+               ClassA meth1()
+               {
+                    sout("meth1 called.");
+                    return this;
+               }
+               ClassA meth2()
+               {
+                    sout("meth2 called.");
+                    return this;
+               }
+               ClassA meth3()
+               {
+                    sout("meth3 called.");
+                    return this;
+               }
+               int meth4()
+               {
+                    sout("meth4 called.");
+                    return 99;
+               }
+               p s v main(String... args)
+               {
+                    ClassA aobj = new ClassA();
+                    int x = aobj.meth1().meth2().meth3().meth4()
+                    sout(x+1)
+               }
+
+          }
+  - difference : 
+            this and this():
+
+            1) this : 
+                  - It is a keyword.
+                  - It is used to access present class variable and method.
+                  - We cannot use "this" keyword inside a static area.
+
+            2) this() :
+                  - It is a Constructor call.
+                  - It is used to call present class constructor.
+                  - We need to use this() constructor call ONLY inside a constructor that too as a 1st statement.
+                     ** anywhere else if we are using this() we will be getting an compile time error. **
+               ex: 
+                 public class ClassA
+                 {
+                    void meth1()
+                    {
+                         sout("Hi");
+                    }
+                    ClassA(){
+                         sout("default constructor called.");
+                    }
+                    ClassA(int x){
+                         sout("Parameterized constructor called.");
+                    }
+                    p s v main()
+                    {
+                         new ClassA(100).meth1();
+                    }
+                 }
+
+
+                 Output:   
+                     default constructor called.
+                     Parameterized constructor called.
+                     Hi
+
+
+
+String : 
+   - Strings accepts a group of characters.
+   - If we want to take String data we need to use " ",
+
+   String Class : 
+   - Strings which were created by using String class are "Immutable".
+
+   => IMMUTABILITY means, once we have creates a object we cannot modify its contents, if we are trying to modify entirely a new object will be created. Old object will not be affected with these changes.
+
+
+   SCP (String Constant Pool):
+        - In SCP there is no chance of duplicate Objects
+
+     ex:
+       - Case 1 :
+           String s = "Java";
+
+difference between String , StringBuffer and StringBuilder:
+     String :    
+     - Immutable 
+     - equals() -> Contents
+
+     StringBuffer:
+     - default capacity of StringBuffer is 16characters.
+     - Mutable
+     - equals() -> Address Loc`s
+     - synchronized
+
+     StringBuilder:
+     - Mutable
+     - equals() -> 
+     - synchronized
+
+  Que: when we need to use String, StringBuffer, StringBuilder
+
+OOP(object oriented programming languages):
+    def : 
+        it focuses
+
+POP(Procedure oriented programming languages)
+
+ENCAPSULATION : 
+     - It is a process of wrappign up of data or 
+     - it is process of making the feilds as private and providing access those fields with help of public methods i.e through setter and getter methods
+
+
+
+Inheritance : 
+     - Acquiring the properties of one class into another class.
+     - If we want to achieve Inheritance we need to use either "extends" or "implements" keyword.
+     - Inheritance is mainly used for CODE REUSABILITY.
+
+
+     ex: 
+      public class ClassA{
+          void meth1(){
+               System.out.println("ClassA method");
+          }
+      }
+
+      public class ClassB extends ClassA{
+          void meth2(){
+               System.out.println("ClassB method");
+          }
+
+          public static void main(String... args){
+               ClassA aobj = new ClassA();  // HAS-A Relationship
+               aobj.meth1();
+               ClassB bobj = new ClassB();  // IS-A Relationship
+               bobj.meth1();
+               bobj.meth2();
+          }
+      }
+
+     ClassA :-   
+          -> Parent Class
+          -> Super Class
+          -> Base Class
+     ClassB :-
+          -> Child Class
+          -> Sub Class
+          -> Derived Class
+
+     Key Points :
+          - We can hold a parent class object with a parent class reference & with that referance we can call only parent class methods.
+                 ClassA aobj  = new ClassA();   // HAs-A Relationship 
+                 aobj.meth1();
+                 aobj.meth2();    // Compile time error
+          
+          - We can hold a Child Class Object with parent class reference & with that referance we can call only parent class methods.
+                 ClassA aobj2 = new ClassB();
+                 aobj2.meth1();
+                 aobj2.meth2();    // Compile time error
+          
+          - We can hold a child class object with a child class referance & with that referance we can call BOTH parent & child Class methods
+                 ClassB bobj1 = new ClassB();    // IS-A Relationship
+                 bobj1.meth1();
+                 bobj1.meth2();
+          
+          - We cannot hold a parent class object with a child class reference, we will be getting an compile time error.
+                 ClassB bobj2 = new ClassA(); // Compile time error
+
+     Types of Inheritance : 
+          1) Single Inheritance :
+                    One parent - One Child
+                    ( Every Java class by default it will exhibit single Inheritance)
+          2) Multi-Level Inheritance :
+                    A child class object should be able to access both parent and grand parent Methods.
+               ex:
+
+               package com.pack1;
+               public class ClassA{
+                    void meth1(){
+                         System.out.println("ClassA method")
+                    }
+               }
+
+               package com.pack1;
+               public class ClassB extends ClassA{
+                    void meth2(){
+                         System.out.println("ClassB method")
+                    }
+               }
+
+               package com.pack2;
+               import com.pack1.ClassB
+               public class ClassX extends ClassB{
+                    void methx(){
+                         System.out.println("ClassX method")
+                    }
+                    public static void main(String[] args){
+                         ClassX xobj = new ClassX();
+                         xobj.meth1(); // grand parent class
+                         xobj.meth2(); // parent class
+                         xobj.meth3();
+                    }
+               }
+
+               Output:
+                ClassA method
+                ClassB method
+                ClassX method
+
+          3) Heirarichal Inheritance :
+                    Sharing the properties of one class to multiple child classes is called "hierarchical Inheritance".(One Parent - Multiple child classes)
+                    
+          4) Hybrid Inheritance :
+                    It is a combination of two or more Inheritances
+          5) Multiple Inheritance: 
+                    Multiple Inheritance is not supported in java because of ambiguity problem.
+                    But if we want to achieve mulitple inheritance, then we can achieve through interfaces.
+          
+      *** Note:
+               Constructors are not inherited, means constructors does not participate in inheritance
+
+=> super and super():
+          super : 
+               1) It is a keyword.
+               2) It is used to call parent class variables & parent class methods.
+               3) We cant use super keyword inside a static area
+          super() :
+               1) It is a constructor.
+               2) It is used to call parent class constructor.
+               3) We need to use super() ONLY inside a constructor, that too as a first statement.
+                  anywhere else if we are using super() we will be getting an compile time error.
+               4) In every java constructor means either default constructor or Parameterized constructor by default 
+
+Polymorphism:
+          1) Compile time Polymorphism
+          2) Runtime Polymorphism
+
+
+
+Method OVERRIDING :
+          - Method OVERLOADING is also know as late binding or runtime Polymorphism.
+          - the method present in parent class is knows overridden method and methods present in clild class in know as over ridding method.
+          - when as over-ridden method is called through parent class reference java determines which version of that method is to be executed based upon the type of the object being reffered to whenever we are calling that method thus this determination  is made it runtime. thats the reason it called runtime Polymorphism.
+
+
+
+     Ex :
+          public class ClassA{
+               protected void meth1(){
+                    System.out.println("Class A meth1()");
+               }
+               public void meth2(int x){
+                    System.out.println("Class A meth2()");
+               }
+               public void meth3(int x, String s){
+                    System.out.println("Class A meth3()");
+               }
+               static void meth4(){
+                    System.out.println("Class A meth4()");
+               }
+               ClassA meth5(){
+                    System.out.println("Class A meth4()");
+                    return new ClassA();
+               }
+          }
+          public class ClassB extends ClassA{
+               @Override
+               public void meth1(){
+                    System.out.println("10");
+               }
+               @Override
+               public void meth2(int value){
+                    System.out.println("20");
+               }
+               @Override
+               public void meth3(int x, String s){
+                    System.out.println("30");
+               }
+               @Override
+               static void meth4(){
+                    System.out.println("40");
+               }
+               @Override
+               ClassB meth5(){
+                    System.out.println("50");
+                    return new ClassB();
+               }
+
+               public static void main(String[] args){
+                    ClassA aobj1 = new ClassA();
+                    aobj.meth1();
+
+                    ClassA aobj1 = new ClassB();
+                    aobj.meth1();
+                    aobj.meth2(500);
+                    aobj.meth3(500,"Java");
+                    aobj.meth4();
+                    aobj.meth5();
+               }
+          } 
+     Note: 
+          - If we want to perform method overriding 100% we need to use inheritance.
+          - If we cannot inherit a method, we can not override that method. [Ex. : private methods.]
+          - private > default > protected > public
+          - whenever we are performing overriding, child methods should not be more restricted than the parent class methods.
+     ***  - Static methods cannot be overridden.
+     ***  - Whenever we are performing methods overriding static methods it may seem like we are overriding
+     ***  - We can not override constructor. Constructor does not participate in Inheritance.
+
+     Que. : Can we perform method overriding, if both the methods have same different return type?
+     Ans : Yes, We can override, 
+        Co-varient return types. aplicable only for classes. does not apply for premitive return types.
+
+
+
+
+Abstraction : 
+     - It is a process of hiding the implemention details from the users and showing only necessory details to the users.
+     - We can achice this Abstraction in two ways:
+          1) Using abstract class
+          2) Using Interfaces
+
+          1) Using abstract class:
+               >>> Abstract Method :
+                    syntax :
+                         public abstract void <method_name>();
+                    
+                    1) A method which is declared as abstract with abstract keyword is known as abstract method.
+                    2) An abstract method always ends with semicolon.
+                    3) For an abstract method there will not be any method body
+                    4) implemention for an abstract method should be given in the next class by using method overriding concept
+                      
+
+          1)  A class which is declared as abstract with abstract with abstract keyword is known as abstract method.
+          2) inside an asbtract class we can write both normal methods and abstract methods.
+          3) It is not mandatory to write at least one abstract method inside an abstract Class
+          4) Writing abstract method inside an abstract class is always optional
+          5) If we are writing an abstract method inside a normal class then 100% that class should be declared as abstract class otherwise we will be getting an compile time error.
+          6) Inside an abstract class we can write main method, constructors, normal methods, asbtract methods including static methods also.
+     ***
+          7) Abstract class cant be instantiated  means we can not create an object for abstract class.  
+          8) If we are inheriting an abstract then in the child class 100% we need to provide implemention (method only) for all the abstract methods which are present  in the abstract class, otherwise we will be getting and compile time error in the child class.
+          9) If we are not overriding all abstract methods present in the abstract class, then in the child class we will be getting an error.
+          10) In the child class if we dont want to provide implemention for the abstract methods present in the abstract class then we need to make our child class class also as abstract.
+
+     Invalid Combination for abstract:
+               - private
+               - static
+               - native
+               - strictfp
+               - synchronize
+               - final
+
+     ex: 
+         public abstract class ClassA{
+          abstract void meth1();
+          abstract void msg();
+
+          void meth2(){
+               System.out.println("meth2() called")
+          }
+          static void meth3(){
+               System.out.println("static meth3() called")
+
+          }
+          ClassA(){
+               System.out.println("Class A Constructor")
+          }
+
+          public static void main(String[] args){
+               System.out.println("Class A Constructor")
+               ClassA.meth3();
+          }
+         }
+
+         public class ClassB extends ClassA{
+          @Override
+          void meth1(){
+               System.out.println("ClassA abstract method overridden")
+          }
+          void msg(){
+               System.out.println("Java is Awesome")
+          }
+          public static void main(String[] args){
+               ClassA aobj = new ClassB();
+               aobj.meth1();
+               aobj.meth2();
+               aobj.msg();
+          }
+         }
+
+
+         2) Using Interfaces:
+               1) Intrface is not a class.
+               2) Syntax : 
+                    <AccessModifier> interface <InterfaceName>
+                    {
+
+                    }
+               3) Every method in interface is by default "public abstract".
+               4) Every variable in interface is by default public static final.
+               5) From java 1.8v onwords write default methods inside an Interface.
+               6) From java 1.8v onwords write statics methods also inside an interface including main method.
+               7) From java 1.9v onwords we can write private methods also inside an interface.
+               8) Inside an interface we cannot write constructors because intterface is not a class.
+               9) Just like a abstract class "we cannot instantiate an interface, means we can not create object for interface
+               10) If we want to inherit an interface into a class we need to use the keyword implements.
+
+                          class  - extends -> class
+                          interface - implements -> class
+                          interface - extends -> interface
+                          class -> interface   => Invalid
+               11) If we are inheriting an interface into a class 100% in the child class we need to provide implemention (by using Method overridding ) for the all abstract methods which are present in the interface, otherwise we will be getting an compile time error.
+               12) Ifn we dont want to provide implemention for all the abstract methods present in the interface  then we need to make our child class also as abstract.
+
+          ***  WE CAN ACHIEVE MULTIPLE INHERITANCE IN JAVA BY USING INTERFACES. 
+
+          Ex. : 
+                public interface InterfaceA{
+                    void meth1();
+                    String msg(inx);
+
+                    default void meth2(){    // java 1.8v
+                         System.out.println("default method of IntrfaceA");
+                         this.meth4();     // calling private method 
+                    }
+
+                    static void meth3(){   // java 1.8v
+                         System.out.println("static  method of IntrfaceA");
+                         //this.meth4() //C.E. because we cannot use "this" keyword inside static methods.
+                    }
+                    private void meth4(){   // java 1.9v
+                         System.out.println("private  method of IntrfaceA");
+                    }
+                    public static void main(){    // java 1.8v
+                         System.out.println("interfaceA main() called");
+                         InterfaceA.meth3();
+                    }
+                }
+
+                public interface InterfaceB{
+                    void display();
+                }
+
+
+                public class ClassB{
+                    void show(){
+                         System.out.println("Class B method Called");  
+                    }
+                }
+
+
+                public class ClassA extends ClassB implements InterfaceA,InterfaceA{
+                    public void meth1(){
+                         System.out.println("interfaceA abstract method overridden");
+                    }
+                    public String msg(int val){
+                         System.out.println("interfaceA abstract overridden"+val);
+                         return "java is Awesome";
+                    }
+                    public void display(){
+                         System.out.println("interfaceB abstract method overridden");
+                    }
+
+                    public static void main(String[] args){
+                         InterfaceA aobj = new ClassA;
+                         aobj.meth1();
+                         System.out.println(aobj.msg(500));
+                         aobj.meth2();
+                         aobj.meth4();  // C.E. because of private access modifier
+                         System.out.println("----------------------------------------");
+                         InterfaceB bobj = new ClassA();
+                         bobj2.display();
+                          System.out.println("----------------------------------------");
+                         new ClassA.show();
+                    }
+                }
+
+
+
+               public InterfaceA{
+                    default void meth1(){
+                         sout("hi");
+                    }
+                }
+               public Interfaceb{
+                    default void meth1(){
+                         sout("hello");
+                    }
+                }
+                public class ClassA implements InterfaceA,InterfaceB{
+                    @Override
+                    public void meth1(){
+                         InterfaceA.super.meth1();
+                         InterfaceB.super.meth1();
+                    }
+                    public static void main(String[] args){
+                         ClassA aobj = new ClassA();
+                         aobj.meth1();
+                    }
+                }
+
+
+     Functional Interface:
+              1) An interface which is having only one abstract method is known as Functional interface.
+              2) Inside a functional interface we can have any number of default methods, static methods, private methods including main method also, but there should be only one abstract method.
+              3) Functional interfaces concept has been introduced in java 1.8v.
+               ex : runnable interface, consumer interface, predicate interface, supplier interface etc.
+              4) in Order to declare  an interface as functional interface we need to use the annotation "@FunctionalInterface".
+
+     Marker Interface:
+          1) An interface which is not having any variables or methods is known as "Marker Interface"
+          2) It is an empty interface.
+          3) Whenever a class is inheriting this Marker Interface that class will achieve some special properties
+               ex: Serializable Interface, Cloneable Interface
+
+
+Exception handling:
+          Error : 
+               - If there is an error occured in our program. 
+               - Our program will be terminated, we can not save our program by handling that error.
+               - In simple error cant be handled.
+
+               There are three types of errors:
+                    1) Compile time Error: 
+                         These error occurs due to the wrong sysntax.
+                    2) Runtime Errors:
+                         These errors occurs due to the efficiency of the machine.
+                    3) Logical Errors:
+                         These errors occurs due to the bad logic by the programmers.
+          Exception : 
+               - If there is an exception occured in our program, our program will be terminated, but we can save our program by handling that exception. In simple "Exception can be handled."
+               
+               There are two types of exceptions:
+                    1) Chechked Exception:
+                         The exceptions which are detected at compilation time by the java compiler are known as Checked Exception.
+                    2) Unchecked Exception:
+                         The exception which are detected at runtime by the JVM are known as Un-checked exceptions.
+          Note: 
+               1) An exception always occurs only inside a method or inside a block.
+               2) Every Exception always occurs only during "RUNTIME", but some are detected at compilation time and some are detected at Runtime.
+          
+          Que. What happens if an Exception occured in our program?
+          Ans:
+             Java method => 
+                    1) Name of the exception
+                    2) Reason of the exception
+                    3) Complete info about the exception.
+                         ( Exception Object )
+                                   =>
+                                   JVM :
+                                        Default Exception Handler
+
+     *** Every Exception is a class ***
+
+     Exception Hierarchy:
+
+     //   diagram
+
+     Que: What is exception handling?
+     Ans: Exception handling means not removing the exception (or) not resolving the exception we are proving an alternative way to continue the program.
+
+          We can handle an Exception by using try-catch-finally blocks.
+               try{
+                    // we need to write the suspecious/malicious code.
+               }
+               catch(Exception e){
+                    // We need to catch the exception which occured inside the try block.
+               }
+               finally{
+                    // finally block will be executed always IRRESPECTIVE of the Exception
+               }
+
+
+     Methods to display exception information:
+          Throwable class defines the following methods to print exception information to console:
+          
+          1) Method name : 
+               printStackTrace()
+            Description:
+               Name of the exception: description of exception Strack trace
+
+          2) Method name :
+                toString()
+             Description:
+                Name of the exception: discription of exception.
+          
+          3) Method name :
+                getMessage()
+             Description:
+                Only Description
+     
+     public class ClassA{
+          void meth1(){
+               Scanner sc = new Scanner(System.in);
+               System.out.println(10);
+               try{
+                    System.out.println("try block executed.");
+                    System.out.println("Please enter a Number");
+                    System.out.println("===> "+20/sc.nextInt());
+               }
+               catch{
+                    System.out.println("Catch block executed");
+                    // System.out.println(e.getMessage());    // Reason of the Exception
+                    // System.out.println(e.toString()); // Name of the Exception
+                    e.pringStackTrace();
+               }
+               finally{
+                    System.out.println("Finally block executed");
+               }
+                    System.out.println(30);
+          }
+
+          public static void main(String[] args){
+               new ClassA().math1();
+          }
+     }
+
+     Key points in exception handling:
+          1) We can handle an exception by using try, catch, finally blocks.
+          2) Whenever we are using all three blocks we should use 100% maintain the order.
+          3) Inside the try block always we need to write minimum code.[ Write only suspecious code inside the try block.]
+          4) if there is an exception occured in the try block the immediately the compiler will be coming to to its respective catch block block. Remaining code which is present inside the try block not be executed.
+          5) A catch block will be executed only if there is an exception occured in the try block and we are catching that respective 
+          6) If we are catching the parent exception of all the exception classes i.e.[Exception] then every Exception will be handled.
+          7) A single try block never exists.
+          8) try block should be followed with either catch block (or) finally block (or) both.
+               try-catch         => valid,
+               try-finally       => valid,
+               catch-finally     => invalid,
+               try-catch-finally => valid,
+               try               => invalid   
+          9) If we are not writing catch block in our program then we will not be having any error but if there is an exception occured in our program it will not be handled.
+          10) finally block is used to close the existing database/server connections
+          11) between try-catch-finally blocks there should not be any indicidual statements.
+          12) We cam handle multiple exceptions by using multiple catch blocks.
+          13) For single try block we can write multiple catch blocks but we need to write a single finally block.
+          14) multiple catch blocks are allowed but mulitple finally blocks are not allowed.
+          15) Whenever we are using multiple catch blocks always parent exception should be handled in the last catch block.
+          16) If we are using multiple catch blocks duplicate exception handling is not allowed.[ we will be getting an compile time error.]
+          17) From java 1.7v onwords we can write a single try block also.
+          18) from java 1.7v onwords we can handle multiple exceptions by using a single catch block. But those exce[tions should not have any parent child relationship.
+
+          public class ClassA{
+               void meth1(){
+                    Scanner sc = new Scanner(System.in);
+                    String s[] = new String[5];
+
+                    System.out.println(10);
+                    try{
+                         System.out.println("try block executed");
+                         System.out.println("Please enter a number");
+                         
+                         System.out.println("==>"+20/sc.nextInt);
+                         System.out.println(s[2].length());
+
+                         System.out.println("Hello World");
+                    }
+                    //System.out.println("Hi");   // C.E.
+                    /*
+                    catch(ArithmeticException e){
+                         System.out.println("1st Catch block executed");
+                         e.pringStackTrace();
+                    }
+                    catch(NullPointerException e){
+                         System.out.println("2st Catch block executed");
+                         e.pringStackTrace();
+                    }
+                    */
+                    catch(ArithmeticException | NullPointerException e){
+                         System.out.println("Catch block executed");
+                         e.pringStackTrace();
+                    }
+                    //System.out.println("hello");   // C.E.
+                    finally{
+                         System.out.println("Catch block executed");
+                         sc.close;
+                    }
+                    System.out.println(30);
+               }
+
+               void meth2() throws Exception{
+                    System.out.println("meth2() executed");
+                    try(FileReader fr = new FileReader('FilePath)){
+                         System.out.println("This is try with Resources");
+                    }
+               }
+
+               public static void main(String[] args){
+                    new ClassA().meth1();
+               }
+          }
+
+
+     Examples:
+     1)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(ArithmeticException e){
+
+                    }
+               }
+          }
+
+     Ans : Valid
+
+     2)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(ArithmeticException e){
+
+                    }
+                    catch(NullPointerException e){
+
+                    }
+               }
+          }
+
+     Ans: Valid
+
+     3)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(ArithmeticException e){
+
+                    }
+                    catch(ArithmeticException e){
+
+                    }
+               }
+          }
+
+     Ans : Invalid, because, we cant catch same exception repeatedly.
+     
+
+     4)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+               }
+          }
+
+     Ans : Valid
+
+     5)
+          class Test1{
+               public static void main(String[] args){
+                    catch(Exception e){
+
+                    }
+               }
+          }
+     Ans: Invalid, catch without try.
+     6)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    System.out.println("hello");
+                    catch(Exception e){
+
+                    }
+               }
+          }
+
+     Ans : Invalid, 
+     7)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(Exception e){
+
+                    }
+                    finally{
+
+                    }
+               }
+          }
+
+     valid
+     
+     8)
+                    class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    finally{
+
+                    }
+               }
+          }
+     valid, but exception wont be handled.
+     
+     9)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    finally{
+
+                    }
+                    finally{
+
+                    }
+               }
+          }
+     Ans: Invalid , 
+     
+     10)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(Exception e){
+
+                    }
+                    System.out.println("hello");
+                    finally{
+
+                    }
+               }
+          }
+
+     Invalid
+     
+     11)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    finally{
+
+                    }
+                    catch(Exception e){
+
+                    }
+               }
+          }
+     invalid
+     
+     12)
+          class Test1{
+               public static void main(String[] args){
+                    finally{
+
+                    }
+               }
+          }
+     invalid
+     13)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+                         try{
+
+                         }
+                         catch(Exception e){
+
+                         }
+                    }
+                    catch(Exception e){
+
+                    }
+               }
+          }
+     Ans: valid
+
+     14) 
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(Exception e){
+                         try{
+
+                         }
+                         finally{
+
+                         }
+                    }
+               }
+          }
+     Ans: valid
+
+     15)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(Exception e){
+                         try{
+
+                         }
+                         catch(Exception e){
+
+                         }
+                    }
+                    finally{
+                         finally{
+
+                         }
+                    }
+               }
+          }
+     Ans: InValid
+
+     16)
+          class Test1{
+               public static void main(String[] args){
+                    finally{
+
+                    }
+                    try{
+
+                    }
+                    catch(Exception e){
+
+                    }
+               }
+          }
+     Ans: invalid
+
+     17)
+          class Test1{
+               public static void main(String[] args){
+                    try{
+
+                    }
+                    catch(Exception e){
+
+                    }
+                    finally{
+                         try{
+
+                         }
+                         catch(Exception e){
+
+                         }
+                         finally{
+
+                         }
+                    }
+               }
+          }
+     Ans : valid
+
+     Que : Create a Java program that reads two integer values from user and performs division operation.
+     
+
+
+
+UnderStanding Clone Method:
+     - Clone method is present in OBJECT class which is use to create an exact copy of our class object.
+     - Whenever we are using clone method on a particular class that should be inheriting a Marker Interface known as Cloneable Interface, Otherwise we will be getting an clone not supported exception.
+     - Clone method is use to create an exact copy of existing object without using "new" keyword.
+
+
+     Example 1:
+          public class ClassA{
+               int a = 10;
+               int b = 20;
+          }
+
+          public class ClassB{
+               int x = 100;
+               int y = 200;
+
+               ClassB show() throws Exception{
+                    Class obj = (ClassB)super.clone();
+                    return obj;
+                    // return (ClassB)super.clone();
+               }
+          }
+
+          public class ClassC{
+               void meth1() throws Exception{
+                    System.out.println("Implementing object Cloning");
+
+                    ClassA aobj1 = new ClassA();
+                    System.out.println(aobj1.a+" "+aobj1.b);
+                    ClassA aobj2 = aobj1;
+                    aobj2.b = 5000;
+
+                    System.out.println(aobj1.a+" "+aobj1.b+" "+aobj2.b+"\n");
+
+                    ClassB bobj = new ClassB();
+                    System.out.println(bobj1.x+" "+bobj1.y);
+                    ClassB bobj2 = bobj1.show();
+                    bobj.y = 5000;
+                    System.out.println(bobj.x+" "+bobj.y+" "+bobj.y);
+                    System.out.println(bobj2.x);
+               }
+
+
+               public static void main(String[] args){
+                    ClassC cobj = new ClassC();
+                    cobj.meth1();
+               }
+          }
+
+          Example 2: 
+
+          public class Student implements Clonable{
+               String stuName;
+               int stuId;
+
+               public Student(String stuName, int stuId){
+                    this.stuName = stuName;
+                    this.stuId = stuId;
+               }
+               Student show() throws Exception{
+                    return (Student)super.clone();
+               }
+               public static void main(String[] args){
+                    Student s1 = new Student("Sudheer", 101);
+                    System.out.println(s1.stuName + " " + s1.stuId);
+
+                    Student s2 = s1.show();
+                    System.out.println(s2.stuName+" "+s2.stuId);
+                    s2.stuId=501;
+                    System.out.println(s2.stuName+" "+s2.stuId);
+               }
+          }
+
+Multitasking : 
+     - Multitasking means performing multipletasks at the same time by a single processor in order to optimize the utilization of CPU.
+
+     Multitasking :
+          1) Process Based Multitasking -> MultiProcessing
+          2) Thread Based Multitasking  -> Multithreading
+
+     MultiProcessing:
+          process 1 -> Task 1
+          (876)
+          process 2 -> Task 2
+          (567)
+          Process 3 -> Task 3
+          (345)  ------------------------> these are address locations.
+
+     Multithreading:
+          process 1          
+               Thread 1      Task 1 
+               Thread 2      Task 2
+               Thread 3      Task 3
+          (876)
+
+     Que : What is Thread?
+     Ans : 1) A thread is a smalles unit of a process.
+           2) Process acts as a HOST for a thread.
+           3) Atleast one process is required to create a Thread.
+           4) Threads share same Address Locations.
+           5) As Threads share same address locations context switching is easy in Threads.
+     
+     Que : How to create Thread?
+     Ans : A) We can create a thread in 2 ways
+                -> By extending Thread Class
+                -> By Implementing runnable Interface.
+     Note : 
+          - Whenever we are starting a Thread by using start(), every Thread by default it will execute run() present in Thread Class.
+
+     syntax: 
+           public void run(){
+
+           } 
+
+     Steps to create a Thread:
+          1) Write a class that extends Thread class or implements Runnable interface this is available in lang package.
+          2) Write public void run() method in that class, this is the method by default executed by any thread.
+          3) Create an object to that class(Inside main().)
+          4) Create a Thread Class Object and attach it to your class Object.
+          5) Start running the thread.
+
+
+          public class ClassA extends Thread{
+
+               @Override
+               public void run(){
+                    for(int i = 1 ; i<5 ; i++)
+                    System.out.println("i value : "+i);
+               }
+
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    Thread t1 = new Thread(aobj);
+                    //t1.start();
+                    /*
+                    Whenever we are calling start() a new Thread will be created & that new thread is responsible for running the run() present in ClassA (Because of using overriding.)
+                    */
+
+                    // t1.run();
+                    /*
+                    Whenever we are calling run() No new Thread will be created we are calling run() present in Thread class just like a normal method call but run() present in ClassA will be executed (Because of using overriding).
+                    */
+
+                    Thread t2 = new Thread();
+                    // t2.start();
+
+                    /* 
+                    Whenever we are calling start() a new Thread will be created, & that new thread is responsible for running the run() present in Thread Class.
+                    */
+
+                    // t2.run();
+                    /*
+                    Whenever we are calling run() No new Thread will be created we are calling run() present in Thread just like a normal method call.
+                    */
+               }
+          }
+
+
+     Getting And Setting Names of a Thread :
+          - Every Thread in java has some name it may be provided explicitly by the programmer or automatically genereated by JVM.
+          - Thread class defines the following method to get and set name of Thread 
+                    - public final Stirng getName();
+                    - public final void setName(String name);
+
+     UnderStanding Thread Priorities:
+          - In the java programming language, every thread has a priority.
+          - We can increase or decrease the priority of any thread by using setPriority(int newPriority) method.
+          - We can get the priority of the thread by using getPriority() method.
+          - Priority can either be given by JVM(5) while creating the thread or it can be given by programmer explicitly.
+          - Accepted value of priority for thread is in range of 1 - 10.
+          - Thread Priorities are highly system-dependent we should always keep in mind that underlying platform should provide support for scheduling based on thread priority.
+
+     
+     Program:
+          
+          public class ClassA extends Thread {
+          @Override
+          public void run(){
+               
+               String name = Thread.currentThread().getName();
+               int priority = Thread.currentThread().getPriority();
+               
+               for (int i=1 ; i<10; i++) {
+                    System.out.println(name+"("+priority+")"+" has executed run(): +" "+i);
+               }
+          }
+
+          public static void main(String[] args) {
+               
+                    ClassA aobj = new ClassA();
+
+                    Thread t1 = new Thread(aobj);
+                    Thread t2 = new Thread(aobj);
+
+                    t1.setName("First Thread");
+                    t2.setName("Second Thread");
+
+                    t1.setPriority(10); // t1.setPriority(MIN_PRIORITY)
+                    t1.setPriority(10); // t2.setPriority(MAX_PRIORITY)
+
+                    t1.start();
+                    t2.start();
+               }
+          }
+
+
+     Thread Scheduler : 
+     ------------------
+
+          Thread Scheduler is going to decide which thread should start its execution basing on Two aspects:
+               ===> Thread Priorities
+               ===> underlying outside
+
+     Thread Priority:
+     ----------------
+          The priorities of thread varies between 1 - 10
+               ===> Minimum priority : 1
+               ===> Default priority : 5
+               ===> Maximim priority : 10
+
+     *** Whenver we are giving the priorities of a thread if we are exceeding the range then we will be getting an Exception [ IllegalArgumentException ]
+
+     UnderStanding join method:
+          - The join method allows the current executing thread to wait for the complition of another thread.
+          - Every join method throws Interrupted exception hence compalsory we should handle by using try-catch or by throws keyword, otherwise we will be getting an compile time error.
+
+          program : 
+               public class ClassA extends Thread{
+                    @Override
+                    public void run(){
+                         for(int i = 1 ; i <= 5 ; i++){
+                              System.out.println("ClassA : "+i);
+                         }
+                    }
+               }
+
+
+               public class ClassB {
+                    public static void main(String[] args) throws InterruptedException{
+                         ClassA aobj = new ClassA();
+                         aobj.start();
+
+                         aobj.join();
+                         // Thread.yeild();  //    no exception
+
+                         for(int i = 1 ; i<=5 ; i++){
+                              System.out.println("ClassB main() : "+i);
+                         }
+                    }
+               }
+
+
+               Output:
+                    ClassA : 1
+                    ClassA : 2
+                    ClassA : 3
+                    ClassA : 4
+                    ClassA : 5
+                    ClassB main() : 1 
+                    ClassB main() : 2 
+                    ClassB main() : 3 
+                    ClassB main() : 4 
+                    ClassB main() : 5 
+
+     UnderStanding sleep method;
+          - If we want a thread to pause performing any actions for a given amount of time then we should use sleep method.
+          - This is an efficient means of making processor time available to the other threads of an application.
+          - There are two versions of sleep methods:
+               1) Thread.sleep(long milisecs)
+               2) Thread.sleep(long milisec, int nano sec)
+          - However the sleep timing of a thread are not guaranteed to be precise because they are highly system dependent. 
+
+
+          Program:
+               public class ClassA{
+                    public static void main(String[] args){
+                         
+                         System.out.println("j");
+                         Thread.sleep(5000);
+                         
+                         System.out.println("a");
+                         Thread.sleep(5000);
+                         
+                         System.out.println("v");
+                         Thread.sleep(5000,500);
+                         
+                         System.out.println("a");
+                    }
+               }
+     
+     UnderStanding Interrupt method : 
+          - An Interrupt is an indication to a thread that it should stop what it is doing and dp something else
+          - For Interrupt to work correctly the Interrupted thread must be in either sleeping state or in waitng state.
+
+          program :
+               public class ClassA extends Thread{
+                    public void run(){
+                         System.out.println("I am ready for Interviews");
+
+                         for(int i = 1 ; i <= 5 ; i++){
+                              System.out.println("This is my "+i+" interview");
+                         }
+                         try{
+                              System.out.println("I got placed!!! i want to relax");
+                              Thread.sleep(15000);
+                         }
+                         catch(Exception e)P{
+                              System.out.println("My sleep got disturbed");
+                         }
+                         System.out.println("Time to go to Office");
+                    }
+
+                    public static void main(String[] args){
+                         ClassA aobj = new ClassA();
+                         Thread t = new Thread(aobj);
+                         t.start();
+                         t.interrupt();
+                    }
+               }
+
+
+     UnderStanding yeild Method : 
+          - yeild method provides a mechanism to inform the "thread scheduler" the current thread is willing to handover its current use of processor but it`d like to scheduled back ASAP.
+          - If there are several waiting threads with the same priority then we cant expect exactly which thread will get a chance for its execution.
+
+          program : 
+               public class ClassA extends Thread{
+                    @Override
+                    public void run(){
+                         for(int i = 1 ; i <= 5 ; i++){
+                              System.out.println("ClassA : "+i);
+                         }
+                    }
+               }
+
+
+               public class ClassB {
+                    public static void main(String[] args){
+                         ClassA aobj = new ClassA();
+                         aobj.start();
+
+                         //aobj.join();
+                         Thread.yeild();  //    no exception
+
+                         for(int i = 1 ; i<=5 ; i++){
+                              System.out.println("ClassB main() : "+i);
+                         }
+                    }
+               }
+     UnderStanding Synchronization
+          - synchronization in java controlls multiple threads from accessing shared resourse in order to prevent an inconsistent state.
+          - java synchronization is done when we want to allow only one thread to access the shared resourse.
+          - In simple synchronization is a process of making only one thread access a resource, where multiple threads are trying to access the same shared resource, and moving all the remaining into waiting state.
+          - By using synchronization we can achieve consistent results but increases the waiting time.
+          - We can use synchronization in two ways:
+               => a method can be synchronized
+               => a block can be synchronized
+          - We cant synchronize class.
+
+     Program: 
+          1) 
+               public class ClassA extends Thread{
+                    @Override
+                    public void run(){
+                         criticalResource();
+                    }
+                    synchronized void criticalResource(){
+                         String name = Thread.currentThread().getName();
+                         System.out.println(name+" has entered criticalResource()" );
+                         for(int i = 1 ; i <= 5 ; i++){
+                              System.out.println(name+" i value : "+i);
+                         }
+                         System.out.println(name+" completed execution");
+                    }
+               }
+               public static void main(String[] args){
+                    
+                    ClassA aobj = new ClassA();
+                    
+                    Thread t1 = new Thread(aobj);
+                    Thread t2 = new Thread(aobj);
+
+                    t1.setName("First-Thread");
+                    t2.setName("Second-Thread");
+
+                    t1.start();
+                    t2.start();
+               }
+
+          2)
+               public class ClassB extends Thread{
+                    public void run(){
+                         String name = Thread.currentThread().getName();
+                         System.out.println(name+" has entered run()");
+                         synchronized (this){
+                              for(int i = 1 ; i <= 5 ; i++){
+                                   System.out.println(name+" i value : "+i);
+                              }
+                         }
+                         System.out.println(name+" completed execution");
+                    }
+
+                    public static void main(String[] args){
+                         
+                         ClassB bobj = new Thread(bobj);
+
+                         Thread t1 = new Thread(bobj);
+                         Thraed t2 = new Thread(bobj);
+
+                         t1.setName("First-Thread");
+                         t2.setName("Second-Thraed");
+
+                         t1.start();
+                         t2.start();
+                    }
+               }
+          3)
+               public class ClassC implements Runnable{
+                    int availableBerths = 1;
+                    int wantedBerths;
+
+                    ClassC(int requireBerths){
+                         wantedBerths = requireBerths;
+                    }
+                    public void run(){
+                         synchronized(this){
+                              System.out.println("available berths : "+availableBerths);
+                              if(availableBerths>=wantedBerths){
+                                   String name = Thread.currentThread().getName();
+                                   System.out.println(wantedBerths + " allocated to "+name);
+                                   availableBerths=availableBerths-wantedBerths;
+                              }
+                              else{
+                                   System.out.println("sorry no Berths");
+                              }
+                         }
+                    }
+
+                    public static void main(String[] args){
+                         
+                         ClassC aobj = new ClassC(1);
+
+                         Thread t1 = new Thread(aobj);
+                         Thread t2 = new Thraed(aobj);
+
+                         t1.setName("Kishan");
+                         t2.setName("Sujata");
+
+                         t1.start();
+                         t2.start();
+                    }
+               }
+
+     Deadlock:
+          - Deadlock describes a situation where two or more threads area blocked forever, and waiting for each other.
+          - In other words it is a conditoin which occurs when two or more threads get blocked, waiting for each other for an infinite period of time to release the resources they hold.
+
+          public class ClassD{
+               public static void main(String[] args){    // TDD
+                    final String A = "Java";
+                    final String B = "Python";
+
+                    Thread t1 = new Thread(){
+                         // Anononmyous inner class starts heterogeneous
+                         @Override
+                         public void run(){
+                              synchronized (A){
+                                   System.out.println("Thread 1 locked on A");
+                                   try{
+                                        Thread.sleep(100);
+                                   }
+                                   catch(Exception e){
+                                        e.printStateTrace();
+                                   }
+                                   synchronized(B)   {   // Thread1 will be waiting for B
+                                        System.out.println("Thread 2 locked on B");  // Thread 1...
+                                   }
+                                   System.out.println("no Deadlock");
+                              }
+                         }
+                    }; // Anononmyous Inner Class Ends heterogeneous
+
+                    Thread t2 = new Thread(){
+                         @Override
+                         public void run(){
+                              synchronized (B){   // Thread 2 is holding Python
+                                   System.out.println("Thread 2 locked on B");
+                                   try{
+                                        Thread.sleep(100);
+                                   }
+                                   catch(Exception e){
+                                         e.printStateTrace();
+                                   }
+                                   synchronized(A)   {   // Thread2 will be waiting for A (Java)
+                                        System.out.println("Thread 2 locked on A");
+                                   }
+                                   System.out.println("no dead lock");
+                              }
+                         }
+                    };
+                    t1.start();
+                    t2.start();
+               }
+          }
+
+     Interthread Communication :
+
+          - Two threads can communicate each other by using wait(), notify() and notifyAll() methods.
+
+          - All these three methods are present in object class.
+
+          => Method Name: public final void wait()
+               
+               Description: Causes the current thread to wait until either another thread invokes the notify() method or the notifyAll(), or a specified amount of time has elapsed.
+          
+          => Method Name: public final native void notify()
+               
+               Description: Wakes up a single thread that is waiting.
+          
+          => Method Name: public final void notifyAll()
+               
+               Description: Wakes up all threads that are waiting.
+
+          program:
+               public class ClassF{
+                    int amount = 10000; // Instance
+
+                    synchronized void with_draw(int amount) throws InterruptedException{
+                         if(this.amount<amount){
+                              
+                              System.out.println("Insufficient balance");
+
+                              wait();
+
+                              System.out.print("Amount credited");
+                              this.amount = amount;
+                              System.out.print("with draw successful \nBalance is "+this.amount);
+                         }
+                         else{
+                              this.amount -= amount;
+                              System.out.print("with draw successful \nBalance is "+this.amount);     
+                         }
+                    }
+                    synchronized void deposit(int amount){
+                         this.amount += amount;
+                         System.out.print("Deposited successful \nBalance is "+this.amount);
+                         //notify();
+                         //notifyAll();
+                    }
+               }
+
+
+               public class ClassQ{
+                    public static void main(String[] args){
+                         ClassF fobj = new ClassF();
+
+                         new Thread() // first Thread
+                         {
+                              //Anononmyous inner Class starts here
+                              @Override
+                              public void run(){
+                                   try{
+                                        fobj.with_draw(70000)
+                                   }
+                                   catch(InterruptedException e){
+                                        e.printStateTrace();
+                                   }
+                              }
+                         }//Anononmyous inner class ends here
+                         .start();
+
+                         new Thread() // Second Thread
+                         {
+                              //Anononmyous inner Class starts here
+                              @Override
+                              public void run(){
+                                   fobj.deposit(90000);
+                              }
+                         }//Anononmyous inner class ends here
+                         .start();
+                    }
+               }
+     Difference between wait() and sleep() method:
+          A) wait():
+               - wait() releases the lock
+               - It is the method of java.lang.Object class
+               - It is non-static method.
+               - wait() should be noti...
+
+     
+     Thread group:
+          - Java allows to group multiple threads into a single object. so that, we can trigger all the threads by a single method call.
+          - In java thread grouping is done by using thread group class.
+     
+     program:
+          Public class ThreadGroupTest implements Runnable{
+               @Override
+               public void run(){
+                    System.out.print(Thread.currentThread().getName()+" "+Thread.currentThread().getPriority());
+               }
+               public static void main(){
+                    
+                    ThreadGroupTest robj = new ThreadGroupTest();
+                    ThreadGroup tg = new ThreadGroup("Parent ThreadGroup");
+
+                    Thread t1 = new Thread(tg, robj, "one");
+                    t1.start();
+                    Thread t2 = new Thread(tg, robj, "two");
+                    t2.start();
+                    Thread t3 = new Thread(tg, robj, "three");
+                    t3.start();
+
+                    System.out.print("Thread Group Name : "+tg.getName());
+                    System.out.print("Active Threads : "+tg.activeCount());
+
+                    tg.setMaxPriority(10);
+               }
+          }
+
+     Thread Pooling:
+          - Thread pool represents a group of worker threads that are waiting for the task and reuse number of times.
+          - Thread pool contain a group of fixed size threads.
+          - A thread from the thread pool is assigned a task by the service provider.
+          - After completion of the task, thread is contained in the thread pool again.
+          - At any point, at most threads will be in actively processing the tasks.
+          - If additoinal tasks are submitted when all threads are active, they (tasks) will wait in the queue until a thread is available.
+          - If any thread terminates due to a failure during execution prior to shutdown, a new thread will take its place to execute subsequent taks.
+          - The threads in the pool will exist until it is explicitly shutdown.
+     
+          program:
+               import java.util.concurrent.ExecutorService
+               import java.util.concurrent.Executors;
+
+               public class ThreadPoolDemo extends Thread{
+                    private String msg;
+
+                    public ThreadPoolDemo(String s){
+                         this.msg = s;
+                    }
+                    synchronized public void run(){
+                         System.out.println(Thread.currentThread().getName()+" (Begining) message = "+msg);
+                         processMessage();
+                         System.out.println(Thread.currentThread().getName()+" (Ending)");
+                         processMessage();
+                    }
+                    private void processMessage(){
+                         try{
+                              Thread.sleep(20000);
+                         }
+                         catch(InterruptedException e){
+                              e.printStackTrace();
+                         }
+                    }
+                    public static void main(String[] args){
+                         ExecutorService executor = Executors.newFixedThreadPool(3);
+                         for( int i = 1; i<=5; i++){    // 5 iterations
+                              ThreadPoolDemo tpdobj = new ThreadPoolDemo(""+i);
+                              Thread t = new Thread (tpdobj);
+                              executor.execute(t);
+                         }
+                         executor.shutdown();
+                         while(!executor.isTerminated()){}
+                         System.out.println("Finished all threads");
+                    }
+               }
+
+     Demon Thread:
+          - Demon Thread is a low priority thread which will be working in the background of a java program.
+          - Demon thread provides support to other existing threads.
+          - Demon thread will executes contineously until its supporting threads has completed its execution. 
+          - the best example of demon thread is "garbage collector".
+
+          program:
+               public class ClassA extends Thread{
+                    @Override
+                    public void run(){
+                         int i = 1;
+                         while(true){
+                              System.out.println(i++);
+                         }
+                    }
+               
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    Thread t = new Thread(aobj);
+                    t.setDemon(true);
+                    t.start();
+
+                    for(int i=1 ; i<=20 ; i++){
+                         System.out.println("main() : "+i);
+                    }
+               }
+          }
+
+
+Java Multithreading important Questions.
+     1) What is a thread?
+     2) Which thread by default runs in every java program?
+     3) What us the default proority of thread?
+     4) How can you change the priority number of the thread?
+     5) Which method is executed by any thread?
+     6) How can you stop a thread which is running?
+     7) Explain the two types of multithreading?
+     8) What is the difference between a process and a thread?
+     9) What is thread scheduler?
+     10) Explain the synchronization of Thread?
+     11) What is the difference between synchronized block and synchronized method?
+     12) What is thread deadlock? How can you Resolve Deadlock situation?
+     13) Which method are used in thread communication?
+     14) What is the difference between notify() and notifyAll() methods?
+     15) What is the diffference between sleep(100) and wait(100) methods and join()?
+     16) Explain the life cycle of a thread?
+     17) What is daemon Thread? // Garbage collector
+          Def: Daemon thread is a low priority thread that runs in background to perform tasks such as garbage collection(gc) etc. 
+
+Garbage Collection:
+     - Garbage Collection is a process of re-Acquiring heap space by destroying all the unused and un-referanced objects from the heap area.
+     - Garbage Collection is done by the garbage collector.
+     - garbage collector is a daemon thread(it is a low priority thread.)
+     - Garbage Collector is going to use mark and sweep algo. to destroy all the unused or un-referanced objects.
+     - Garbage Collector is going to mark all live objects and destroys all unmarked objects.
+     - Garbage Collector will be working in the background every java program, so no need to call it manually but if we want to call it manually also we can do that using two pre-defined classes [system class and runtime class.]      
+
+
+     Finalize():  ------> Present in Object Class.
+          1) finalize() will be internally called by the gar\
+           collector.
+          2) finalize() is going to terminate all the existing connections which were associated with the object that is going to be destroyed.
+
+     Que. When an object will be eligible for destruction?
+     Ans: An object will be eligible for destruction in any of the below mentioned scenarios:
+          --> By Re-assigning the referance variable.
+          --> By Nullifying the reference variable.
+          --> All Objects created inside method  
+                    // objects inside main method will be destryed when JVM is closed
+                    // ex. closing ide.
+     program:
+          public class ClassA{
+               void meth1(){
+                    System.out.println("meth1() called");
+               }
+               @Override
+               protected void finalize(){
+                    System.out.println("Garbage has been collected");
+               }
+               public static void main(String[] args){
+                    ClassA aobj1 = new ClassA();
+                    ClassA aobj2 = new ClassA();
+
+                    aobj.meth1();
+
+                    System.out.println("Hello World");
+                    System.gc();
+
+                    /*
+                    System.out.println("aobj1 : "+aobj1.hashcode());
+                    System.out.println("aobj2 : "+aobj2.hashcode());
+
+                    aobj2 = aobj1;  //  1st way ********* ( Re-assigning the reference variable)
+
+                    System.gc();
+
+                    System.out.println("aobj1 : "+aobj1.hashcode());
+                    System.out.println("aobj2 : "+aobj2.hashcode());
+                    */
+
+                    /*
+
+                    aobj1 = null;   // 2nd way ***** (Nullifying the referance variable)
+                    System.gc();
+                    //System.out.println("aobj1 : "+aobj1.hashcode());
+                    //aobj1.meth1(); // It generates an NullPointerException
+
+                    */
+               }
+          }
+
+IO-Streams:
+     Byte Streams:
+          - In byte Streams data will be transferred in the form of Btyes the length of each data packet is of 1byte.
+          
+          -> InputStreams:
+               FileInputStream:
+                   read():
+                         The return type of read() is int. It is going to return the ASCII values of the characters which are present in the file. If there are NO characters present in the file then read() is going to return -1.
+
+          -> OutputStreams:
+               FileOutputStream:
+                    write():
+                         -> int
+                         -> byte array
+
+
+     Program:
+          public class ClassA{
+               void fileOperation1() throws Exceptoin{
+                    System.out.println("Reading the data from a file");
+                    FileInputStream fis = new FileInputStream("D:\\NIT\\file1.txt");
+                    System.out.println("connection Created");
+                    int x;
+                    while((x = fis.read()) != -1){
+                         System.out.print((char)x);
+                    }
+                    System.out.println();
+                    System.out.println("Data Retrived);
+                    fis.close();
+               }
+
+               void fileOperation2() throws Exception{
+                    System.out.println("Writing the data into a file : ");
+                    FileOutputStream fos = new FileOutputStream("D:\\NIT\\file2.txt");
+                    System.out.println("Connectoin created");
+                    String msg = " java is Awesome";
+                    byte arr[] = msg.getBytes();
+                    fos.write(arr);
+                    System.out.println("Data Entered");
+                    fos.close();
+               }
+               void fileOperation3(){
+                    System.out.println("Copying the data into a file);
+                    FileOutputStream fis = new FileOutputStream("D:\\NIT\\file2.txt");
+                    FileOutputStream fis = new FileOutputStream("D:\\NIT\\file3.txt");
+                    System.out.println("Connectoin created");
+                    int x;
+                    while((x=fis.read())!=-1){
+                         fos.write(x);
+                    }
+                    System.out.println("Data copied");
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    aobj.fileOperation1();
+                    aobj.fileOperation2();
+                    aobj.fileOperation3();
+               }
+          }
+
+Character Streams:
+     In Character streams data will be transferred in the form of Characters. The length of each data packets is of 2 bytes.
+          Reader:
+               FileReader:
+                    read():
+                         The return type for read() is int. It is going to return the ASCII values of the characters which are present in the file. If there are NO characters present in the file then read() is going to return -1.
+          Writer:
+               FileWriter:
+                    write();
+                         return type:
+                              int
+                              String
+     program:
+
+          public class ClassA{
+               void fileOperation1() throws Exception{
+                    System.out.println("Reading the data from the file");
+                    FileReader fr = new FileReader("D:\\NIT\\file1.txt");
+                    System.out.println("Connection Created");
+                    int i;
+                    while((i=fr.read())!=-1){
+                         System.out.print((char)i);
+                    }
+                    System.out.println();
+                    System.out.println("Data Retrived);
+                    fr.close();
+               }
+
+               void fileOperation2() throws Exception(){
+                    System.out.println("Writing the data into the file");
+                    FileWriter fw = new FileWriter("D:\\NIT\\file2.txt");
+                    System.out.println("connection created");
+                    String data=" tommorow is wednesday";
+                    fw.write(data);
+                    System.out.println("Data is entered");
+                    fw.close();
+               }
+
+               void fileOperation3() throws Exception();
+               {
+                    System.out.println("Copying the data");
+                    FileReader fw = new FileReader("filepath");
+                    FileWriter fr = new FileWriter("filepath");
+                    int i ;
+                    while((i=fr.read()) != -1){
+                         fw.write(i);
+                    }
+                    System.out.println("Data Copied");
+                    fr.close();
+                    fw.close();
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA;
+                    //aobj.fileOperation1();
+                    //aobj.fileOperation2();
+                    aobj.fileOperation3();
+
+               }
+
+          }
+
+Buffered Streams:
+     - A buffer is a portion in a memory that is used to store a stream of data.
+     - In I/O streams each read or write request is handled directly by the underlying OS.
+     - This can make our program less efficient because each such request generally triggers(requires) disk access, network activity or some other operation that is relatively expensive.
+     - In order to overcome this problem java introduced Buffered Streams.
+     *** Buffered Streams are exactly same like Byte & Character Streams but which more efficiency. 
+          
+
+     program:
+     public class ClassA{
+          void fileoperations() throws Exception{
+               System.out.println("implementing BufferedStreams");
+               BufferedInputStream bis = new BufferedInputStream(new FileInputStream("filepath"));
+               System.out.println("Connection Created");
+               int i;
+               while((i=bis.read()) != -1){
+                    System.out.println((char)i)
+               }
+               System.out.println();
+               System.out.println("Data Retrived")
+               bis.close();
+
+               new BufferedOutputStream(new FileOutputStream("filepath"));
+
+               new BufferedReader(new FileReader("filepath"))
+               new BufferedWriter(new FileWriter("filepath"))
+          }
+          public static void main(String[] args){
+               new ClassA().fileoperations();
+          }
+     }
