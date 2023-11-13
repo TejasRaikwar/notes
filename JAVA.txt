@@ -2601,3 +2601,4 @@ program :
                new ClassB.meth1();
           }
      }
+     
