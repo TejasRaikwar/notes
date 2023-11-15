@@ -2802,3 +2802,96 @@ Program 2 :
                //lt.meth1();
           }
      } 
+
+
+
+HashSet:
+     public class ClassA{
+          void meth1(){
+               System.out.println("Implementing Set Interface");
+
+               //HashSet<Object> set = new HashSet<Object>();   // Insertion order is not maintained
+               LinkedHashset<Object> set = new LinkedHashset<Object>(); // Insertion order is maintained
+               set.add(10); // Insertion order is not maintained
+               set.add("Java"); // heterogeneous data is allowed
+               set.add(null); // null allowed
+               set.add(10); // Duplicates are not allowed
+               set.add('A'); // It is available from java 1.2v
+               set.add(false); // Its default capacity is 16   // load factor is 0.75
+               set.add(1);    // Its size increases by double
+               set.add(36);   // it is not synchronized
+               System.out.println(set);
+               /*
+               System.out.println(set.get(0))
+                    C.E because all set implementing classes will store data basing on hash values
+               */
+               System.out.println("size() : "+set.size()+"\n");
+               System.out.println("Using for-each loop");
+               for(Object o : set){
+                    System.out.println(o+" ");
+               }
+               System.out.println("\n");
+               System.out.println("Using Iterator");
+               Iterator<Object> i1 = set.iterator();
+               while(i1.hasNext()){
+                    System.out.println(i.next()+" ");
+               }
+               System.out.println("\n");
+               System.out.println("Using ListIterator");
+
+               ArrayList<Object> al new ArrayList<Object>(set);
+               System.out.println("set : "+set);
+               System.out.println("ArrayList : "+al+"\n");
+
+               ListIterator<Object> li = al.listIterator();
+               while(li.hasNext()){
+                    System.out.println(li.next()+" ");
+               }
+               System.out.println("\n");
+               while(li.hasPrevious()){
+                    System.out.println(li.previous()+" ");
+               }
+               System.out.println("\n");
+          }
+          public static void main(String[] args){
+               ClassA aobj = new ClassA();
+               aobj.meth1();
+          }
+     }
+
+     TreeSet:
+     public class ClassA{
+          void meth1(){
+               System.out.println("Implementing Set Interface");
+               TreeSet<Object> set = new TreeSet<>(Object);
+               set.add(10); // Insertion order is not maintained but sorting order is maintained
+               set.add("Java"); // heterogeneous data NOT is allowed
+               set.add(null); // null allowed
+               set.add(10); // Duplicates are not allowed
+               set.add('A'); // It is available from java 1.2v
+               set.add(false); // Its default capacity is 16   // load factor is 0.75
+               set.add(1);    // Its size increases by double
+               set.add(36);   // it is not synchronized
+               System.out.println(set);
+
+               System.out.println("Using Iterator");
+               Iterator<Object> i1=set.iterator();
+               while(i1.hasNext){
+                    System.out.println(i1.next()+" ");
+
+               }
+
+               Iterator<Object> i2=set.descendingIterator();
+               while(i2.hasNext){
+                    System.out.println(i2.next()+" ");
+               }
+               System.out.println("\n")
+               System.out.println("headSet() : "+set.headSet(34)); // [1, 10]
+               System.out.println("tailSet() : "+set.tailSet(34)); // [34, 36, 56, 78]
+          }
+
+          public static void main(String[] args){
+               ClassA aobj = new ClassA();
+               aobj.meth1();0
+          }
+     }
