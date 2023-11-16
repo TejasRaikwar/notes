@@ -2957,3 +2957,5 @@ UnderStanding Queue Interface:
                new ClassA().meth1();
           }
      }
+
+     new line added
