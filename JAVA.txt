@@ -2895,3 +2895,65 @@ HashSet:
                aobj.meth1();0
           }
      }
+
+UnderStanding Queue Interface:
+     - The implemention classes for Queue Interface are LinkedList and PriorityQueue.
+     - In Queue elements are stored in FIFO order.
+   *** If we are creating an object for LinkedList and holding that object with LinkedList referance variable then we can access the complete functionality of both Queue and List.
+     - From java 1.5v onwords LinkedList also implements Queue Interface.
+
+     Program:
+1. 
+          public class ClassA{
+               void meth1(){
+                    List<Object> ll1 = new LinkedList<Object>();
+                    LinkedList<Object> ll2 = new LinkedList<Object>();
+
+                    ll1.add(10);
+                    ll1.offer(20);   // C.E. because we cant access Queue Methods
+
+                    ll2.add(100);
+                    ll2.offer(200);
+               }
+          }
+
+2.
+     public class ClassA{
+          void meth1(){
+               System.out.println("Implementing Priority Queue");
+               PriorityQueue<Object> pq = new PriorityQueue<Object>();
+               pq.add(10);  // Insertion order is not maintained, but always the first element will be the smallest
+               pq.offer(67); // heterogeneous data is not allowed
+               pq.offer(65); // null is not allowed
+               pq.offer(35); // Duplicates are allowed
+               pq.offer(61); // It is available from Java 1.5v
+               pq.offer(1);  // Its default capacity is 11
+               pq.offer(38); // Its size increase by double
+               pq.offer(89); // It is not synchronized
+               System.out.println(pq);
+               
+               System.out.println("poll() : "+pq.poll());
+               System.out.println(pq);
+               System.out.println("remove() : "+pq.remove());
+               System.out.println(pq+"\n");
+
+               //pq.clear();
+               //System.out.println(pq);
+               //System.out.println("poll() : "+pq.poll());
+               //System.out.println(pq);
+               //System.out.println("remove() : "+pq.remove());
+               //System.out.println(pq+"\n");
+               System.out.println("peek() : "+pq.peek());
+               System.out.println(pq+"\n");
+
+               /*
+               Iterator<Object> i = pq.iterator();
+               while(i.hasNext()){
+                    System.out.println(i.next())
+               }
+               */
+          }
+          public static void main(String[] args){
+               new ClassA().meth1();
+          }
+     }
