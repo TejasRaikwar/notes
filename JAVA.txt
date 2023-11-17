@@ -2957,3 +2957,109 @@ UnderStanding Queue Interface:
                new ClassA().meth1();
           }
      }
+
+Understanding Map :
+    -in map interface, elements will be stored in the form of key-value pairs
+    -keys should be unique
+    - values can be duplicate
+
+public class ClassA{
+    void meth1(){
+        System.out.println("Implementing map");
+       // HashMap<Object,Object> map = new HashMap<Object,Object>(); // Insertion order is not maintained
+        LinkedHashMap<Object,Object> map = new LinkedHashMap<Object,Object>(); // Insertion order is maintained
+
+        map.put(101,"Java"); 
+        map.put("java",1000); // Heterogeneous key and heterpgeneous values are allowed
+        map.put(null,null); // null key and values are allowed
+        map.put(103,"Java"); // Duplicate values are allowed
+        map.put("India","Delhi"); // 
+        map.put(102,"css"); // its default capacity is 16 [load factor 0.75]
+        map.put(104,2000); // its size increases by double
+        map.put(105,"spring") // it is not synchronized
+        System.out.println(map);
+
+        System.out.println("===>"+map.get(103));
+        map.put(103,"java is awesome");
+        System.out.println("==>",+map.get(103));
+        System.out.println(map.get(103)+"\n");
+        
+        System.out.println("Reteriving data from Map");
+
+        LinkedHashSet<Object> lhs1 = new LinkedHashSet<Object>(map.KeySet());
+        System.out.println("Key in the Map : "+lhs1);
+        Iterator<Obejct> i1 = lhs1.iterator();
+        while(i1.hasNext()){
+            System.out.println(i1.next());
+        }
+        System.out.println("-------------------");
+
+        LinkedHashSet<Object> lhs2 = new LinkedHashSet<Object>(map.entrySet());
+
+        System.out.println("key-value pairs in the Map");
+        Iterator<Object> i2 = new lhs2.iterator();
+        while(i2.hasNext()){
+            //System.out.println(i2.next());
+
+            Entry e = (Entry)i2.next();
+            System.out.println(e.getKey()+" "+e.getValue());
+        }
+        System.out.println("-------------------");
+        System.out.println("Reteriving all keys from map by using ArrayList");
+        System.out.println("new ArrayList<Object>(map.keySet())");
+
+        System.out.println("Reteriving all keys from map by using LinkedList");
+        System.out.println(new LinkedList<Object>(map.keySet()));
+
+        System.out.println("Reteriving all keys from map by using HashSet")
+        System.out.println(new HashSet<Object>(map.keySet()));
+        System.out.println(new HashSet<Object>(map.keySet()));
+    }
+    public static void main(String[] args){
+        new ClassA.meth1();
+    }
+}
+
+/*
+Note:
+-----
+in all map implemented classes key should be unique but if we are trying to pass a duplicate key-value pair we will not be getting any error or an exception the old value which is associated with that key will be replaced with the new value.
+*/
+
+
+program:
+ public class ClassA{
+    void meth1(){
+        System.out.println("Implementing Map Classes");
+        LinkedHashMap<Object,Obejct> map = new LinkedHashMap<Object,Object>(); // insertion order is maintained
+
+        map.put(101,55);
+        map.put(102,66);
+        map.put(103,33);
+        map.put(104,22);
+        map.put(105,44);
+        map.put(106,11);
+        map.put(107,88);
+        map.put(102,77);
+
+        System.out.println(map);
+
+        System.out.println("printing all the keys in a sorting order");
+        System.out.println(new TreeSet<Object>(map.keySet()));
+
+        TreeSet<Object> ts=new TreeSet<Object>();
+
+        ArrayList<Object> al = new ArrayList<Object>();
+        Iterator<Object> i = al.iterator();
+        while(i.hasNext()){
+            Entry e = (Entry).i.next();
+            tr.add(e.getValue());
+        }
+        System.out.println("printing all the keys in a sorting order");
+        System.out.println(ts)
+
+    }
+    public static void main(String[] args){
+        new ClassA.meth1();
+    }
+ }
