@@ -3141,11 +3141,11 @@ TreeMap:
 
 Difference between comparable and Comparator:
 
-             Comparable                                               Comparator
-     1) It is an interface present in the                   1) It is an interface present in 
-        java.lang package                                      the java.util package
-     2) It is used for defining the natural                 2) It is used to compare Object in a way
-        sorting order of the Object.                           that might not align with the natural 
-                                                               ordering[custom sorting order] 
-     3) Uses compareTo()                                    3) Uses compare().
+             Comparable                        |              Comparator
+     1) It is an interface present in the      |    1) It is an interface present in 
+        java.lang package                      |       the java.util package
+     2) It is used for defining the natural    |    2) It is used to compare Object in a way
+        sorting order of the Object.           |       that might not align with the natural 
+                                               |       ordering[custom sorting order] 
+     3) Uses compareTo()                       |    3) Uses compare().
      
