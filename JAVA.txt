@@ -3063,3 +3063,89 @@ program:
         new ClassA.meth1();
     }
  }
+
+
+TreeMap:
+     public class ClassA{
+          void meth1(){
+               System.out.println("Implementing TreeMap");
+
+               TreeMap <Objcet, Object> map = new TreeMap<Object,Objcet>();
+               map.put(101,"Java"); // Insertion order is NOT maintained but storing of keys is maintained in Assensing order
+               map.put(106,1000); // Heterogeneous key NOT and heterpgeneous values are allowed
+               map.put(108,null); // null key NOT allowed and null values are allowed
+               map.put(103,"Java"); // Duplicate values are allowed
+               map.put(107,"Delhi"); //  it is available from java 1.2 version
+               map.put(102,"css"); // its default capacity is 16 [load factor 0.75]
+               map.put(104,2000); // its size increases by double
+               map.put(105,"spring") // it is not synchronized
+               System.out.println(map);
+               System.out.println("-------------------");
+
+               ArrayList<Object> al = new ArrayList<Objcet>(map.entrySet());
+               ListIterator<Objcet> li = al.listIterator();
+               while(li.hasNext()){
+                    System.out.println(li.next());
+               }
+               System.out.println("-------------------");
+               while(li.hasPrevious()){
+                    System.out.println(li.previous());
+               }
+          }
+
+          void meth2(){
+               System.out.println("Implementing HashTable");
+               HashTable<Object,Object> ht = new HashTable<Object,Object>();
+               ht.put(101,"Java"); // Insertion order is NOT maintained 
+               ht.put("Java",1000); // Heterogeneous key and heterogeneous values are allowed
+               ht.put(108,123); // null keys and null values are NOT allowed
+               ht.put(103,"Java"); // Duplicate values are allowed
+               ht.put("India","Delhi"); //  it is available from java 1.0v [Legacy Class]
+               ht.put(102,"css"); // its default capacity is 11 [load factor 0.75]
+               ht.put(104,2000); // its size increases by double
+               ht.put(105,"spring") // it is synchronized
+               System.out.println(ht);
+               System.out.println("-------------------");
+
+               Iterator<Object> i = new LinkedHashSet<Object>(ht.entrySet()).iterator();
+               while(i.hasNext()){
+                    Entry.e = (Entry).i.next();
+                    System.out.println(e.getKey()+" "+e.getValue());
+
+               }
+          }
+          public static void main(String[] args){
+               ClassA aobj = new ClassA();
+               //aobj.meth1();
+               System.out.println("-------------------");
+               aobj.meth2();
+          }
+     }
+
+     HashMap vs LinkedHashMap vs TreeMap vs HashTable:
+     
+         Property      |  HashMap          |    LinkedHashMap     |      TreeMap          |      HashTable
+     ------------------|-------------------|----------------------|-----------------------|--------------------
+     insertion order   |  NOT maintained   |    maintained        |  not maintained       |    NOT maintained
+                       |                   |                      |  (but keys are        |
+                       |                   |                      |   sorted in Assending |
+                       |                   |                      |   order)              |
+     ------------------|------------------ |----------------------|-----------------------|--------------------
+     Null keys/values  |  allowed          |    allowed           |   Not allowed         |     Not allowed
+                       |                   |                      |   (Null values are    |
+                       |                   |                      |   allowed)            |   
+     ------------------|------------------ |----------------------|-----------------------|--------------------
+     Synchronization   |  not synchronized |    not synchronized  |   not synchronized    |    synchronized
+     ---------------------------------------------------------------------------------------------------------
+
+
+Difference between comparable and Comparator:
+
+             Comparable                                               Comparator
+     1) It is an interface present in the                   1) It is an interface present in 
+        java.lang package                                      the java.util package
+     2) It is used for defining the natural                 2) It is used to compare Object in a way
+        sorting order of the Object.                           that might not align with the natural 
+                                                               ordering[custom sorting order] 
+     3) Uses compareTo()                                    3) Uses compare().
+     
