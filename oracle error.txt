@@ -1,0 +1,99 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\raikw> sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 18 06:47:27 2023
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter user-name: system
+Enter password:
+Last Successful login time: Thu Nov 02 2023 08:01:21 +05:30
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> create user test identified by test
+  2  ;
+create user test identified by test
+            *
+ERROR at line 1:
+ORA-65096: invalid common user or role name
+
+
+SQL> alter session set "_oracle_script"=true;
+
+Session altered.
+
+SQL> create user test identified by test;
+
+User created.
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\raikw> sqlplus test/test
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Sat Nov 18 06:55:47 2023
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+ERROR:
+ORA-01045: user TEST lacks CREATE SESSION privilege; logon denied
+
+
+Enter user-name: test
+Enter password:
+ERROR:
+ORA-01045: user TEST lacks CREATE SESSION privilege; logon denied
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+from system:
+
+
+SQL> grant connect to test;
+
+Grant succeeded.
+
+SQL>
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Enter user-name: test
+Enter password:
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL>
+
