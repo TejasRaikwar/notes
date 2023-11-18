@@ -3148,4 +3148,39 @@ Difference between comparable and Comparator:
         sorting order of the Object.           |       that might not align with the natural 
                                                |       ordering[custom sorting order] 
      3) Uses compareTo()                       |    3) Uses compare().
-     
+
+
+program on sorting:
+     public class ClassA{
+          void meth1(){
+               int arr[] = {2,5,1,7,3,6,8,4,9};
+               System.out.println("Before : "+Arrays.toString(arr));
+               Arrays.sort(arr);
+               System.out.println("After : "+Arrays.toString(arr)+"\n");
+
+               ArrayList<Interger> al = new ArrayList<Integer>();
+               al.add(11);
+               al.add(55);
+               al.add(33);
+               al.add(22);
+               al.add(44);
+               System.out.println("Before : "+al);
+               Collections.sort(al);
+               System.out.println("After : "+al+"\n");
+
+               LinkedHashSet<Integer> lhs = new LinkedHashSet<Integer>();
+               lhs.add(300);
+               lhs.add(100);
+               lhs.add(200);
+               System.out.println("Before : "+lhs);
+
+               ArrayList<Integer> al2 = new ArrayList<Integer>(lhs);
+               Collections.sort(al2);
+               System.out.println("After : "+al2);
+               System.out.println("After : "+new TreeSet<Integer>(lhs));
+          }
+          public static void main(String[] args){
+               ClassA aobj = new ClassA();
+               aobj.meth1();
+          }
+     }
