@@ -9508,16 +9508,113 @@ ERROR HANDLING / EXCEPTION HANDLING :-
 1  system defined
 2  user defined
 
+20-nov-23
+
 system defined :- 
 -----------------------
 
-1   ZERO_DIVIDE              => raised when we try to divide number with 0
-2   VALUE_ERROR            => raised when variable type or size mismatches
+1   ZERO_DIVIDE               =>  raised when we try to divide number with 0
+2   VALUE_ERROR            =>  raised when variable type or size mismatches
 3   INVALID_NUMBER        => raised when invalid operation is performed.
 4   NO_DATA_FOUND        => raised when data not found in table
+5   TOO_MANY_ROWS      => raised when select stmt fetches more than one row
+6   DUP_VAL_ON_INDEX  => raised when we try to insert duplicate values into primary key /
+                                                 unique column 
   
+ example 1 :- 
 
+ DECLARE
+   a  NUMBER(3);
+   b  NUMBER(3);
+   c  NUMBER(3);
+BEGIN
+   a := &a;
+   b := &b;
+   c := a/b;
+   DBMS_OUTPUT.PUT_LINE(c);
+EXCEPTION
+  WHEN VALUE_ERROR THEN
+       DBMS_OUTPUT.PUT_LINE('value exceeding size');
+  WHEN ZERO_DIVIDE THEN
+       DBMS_OUTPUT.PUT_LINE('divisor cannot be zero');
+ END;
+  /
+
+Enter value for a: 10
+Enter value for b: 0
+
+ output :-   divisor cannot be zero
+
+=> write a prog to input empno and print name & salary ? 
+
+     DECLARE
+        veno    emp.empno%TYPE;
+        vename  emp.ename%TYPE;
+        vsal    emp.sal%TYPE;
+    BEGIN
+        veno := &empno;
+        SELECT ename,sal INTO vename,vsal FROM emp WHERE empno = veno;
+        DBMS_OUTPUT.PUT_LINE(vename||'  '||vsal);
+   EXCEPTION
+       WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE('employee does not exists');
+       WHEN VALUE_ERROR THEN
+             DBMS_OUTPUT.PUT_LINE('value exceeding size');
+      WHEN OTHERS THEN
+             DBMS_OUTPUT.PUT_LINE('unknown error');
+    END;
+      /
+
+  SQLCODE,SQLERRM :- 
+  ----------------------------------
+
+   SQLCODE => returns error code
+   SQLERRM => returns error message
+
+ CREATE TABLE EMP66
+ (
+  ENO   NUMBER(4) PRIMARY KEY,
+  ENAME VARCHAR2(10) NOT NULL,
+  SAL     NUMBER(7,2) CHECK(SAL>=3000) 
+ );
+
+ Write a prog to insert data into emp66 table ?
+
+  DECLARE
+      veno     emp66.eno%TYPE;
+      vename  emp66.ename%TYPE;
+      vsal       emp66.sal%TYPE;
+ BEGIN
+      veno := &empno;
+      vename := '&ename' ;
+      vsal  := &sal;
+      INSERT INTO emp66 VALUES(veno,vename,vsal);
+      COMMIT;
+ EXCEPTION
+      WHEN DUP_VAL_ON_INDEX THEN
+             DBMS_OUTPUT.PUT_LINE('eno should not be duplicate');
+     WHEN OTHERS THEN
+             IF  SQLCODE =  -2290  THEN
+                   DBMS_OUTPUT.PUT_LINE('sal>=3000');
+              END IF;
+ END;
+  /
+
+PRAGMA EXCEPTION_INIT :- 
+-------------------------------------------
+
+ => using this we can give name to the errors that are not having predefine names
+
+ ex :-  PRAGMA EXCEPTION_INIT(abc,-2290); 
+
+ => exception "abc" must be declared in declaration part  as 
  
+                   abc   exception; 
+
+ => in program if any statement causes -2290 then oracle raises exception "abc" .
+ 
+ 
+  
 
 
 
