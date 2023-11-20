@@ -9298,22 +9298,226 @@ ex :-
    END;
     /     
 
+17-nov-23 
 
+ => difference between cursor and collection ? 
 
+	   CURSOR			COLLECTION
 
+ 1  fetching is row-by-row			we can fetch all rows at a time 
+					and assigned to collection
 
+ 2  gives poor performance			gives good performance
 
+ 3  program consumes less memory		program consumes more memory
 
+ 4  suppors only forward navigation		supports both forward and backward navigation
 
-
-
+ 5  doesn't support random accessing		supports random accessing
 
  
+ NOTE :- 
+
+  => collection gives good performance but consumes more memory and cursor
+       program consumes less memory but gives poor performance ,  so to balance
+       memory and performance use combination of cursor and collection.
+
+     DECLARE
+         CURSOR C1 IS SELECT ENAME FROM EMP ;
+         TYPE  ename_array IS TABLE OF VARCHAR2(10) INDEX BY BINARY_INTEGER;
+         e  ename_array;
+     BEGIN
+          OPEN C1; 
+     LOOP
+         FETCH C1 BULK COLLECT INTO e LIMIT 4;
+         FOR i IN e.first..e.last
+       LOOP
+           DBMS_OUTPUT.PUT_LINE(e(i));
+       END LOOP;
+       EXIT WHEN C1%NOTFOUND;
+    END LOOP;
+       CLOSE C1;
+   END;
+  /
+
+ROWTYPE  array  OR BULK COLLECTING RECORDS :- 
+---------------------------------------------------------------------------------
+
+ DECLARE
+   TYPE  emp_array IS TABLE OF EMP%ROWTYPE  INDEX BY BINARY_INTEGER;
+   e  emp_array;
+ BEGIN
+    SELECT  *  BULK COLLECT INTO e FROM emp ; 
+    FOR i in e.first..e.last
+   LOOP
+     DBMS_OUTPUT.PUT_LINE(e(i).ename||'    '||e(i).sal);
+  END LOOP;
+END;
+ /
+
+e(1)  =>  7369   SMITH   CLERK    17-DEC-80    800   NULL   20 
+e(2)  => 
+
+
+
+e(14)  => 
+
+
+USER DEFINE RECORDS :- 
+---------------------------------------
+
+ => record structure defined by user called user define record.
+
+ => when predefine record is not meeting  our requirements then we can create our own
+      record structure called user define record.
+
+ ex :-  
  
+   TYPE emp_rec IS RECORD
+   (
+       eno        NUMBER(4),
+       ename   VARCHAR2(10),
+       sal         NUMBER(7,2)
+   );
+
+  e      emp_rec; 
+
+ SELECT empno,ename,sal INTO e FROM emp WHERE empno = 7844; 
+
+  e
+  eno     ename   	sal
+  7844   TURNER     1500
 
 
+ DECLARE
+   TYPE emp_rec IS RECORD
+   (
+       eno        NUMBER(4),
+       ename   VARCHAR2(10),
+       sal         NUMBER(7,2)
+   );
+   TYPE emp_array IS TABLE OF emp_rec INDEX BY BINARY_INTEGER;
+   e    emp_array;
+  BEGIN
+      SELECT empno,ename,sal BULK COLLECT INTO e FROM emp ;
+      FOR i IN e.first..e.last
+      LOOP
+            DBMS_OUTPUT.PUT_LINE(e(i).eno||'   '||e(i).ename||'   '||e(i).sal);
+     END LOOP; 
+  END;
+    /
+   
+ 
+e(1) =>  7369  SMITH   800
+e(2) => 7499   ALLEN  1600
 
+ => write a prog to print all employee names and dept names ?
 
+18-nov-23 
+
+ => write a prog to increment all the employee salaries by 1000 ?
+
+     DECLARE
+        TYPE empno_array IS TABLE OF NUMBER(4) INDEX BY BINARY_INTEGER;
+        e    empno_array;
+     BEGIN
+       SELECT empno BULK COLLECT INTO e FROM emp ;
+       FOR i in e.first..e.last
+       LOOP
+            UPDATE emp SET sal = sal + 1000 WHERE empno = e(i);
+      END LOOP;
+      COMMIT;
+   END;
+       /
+
+NOTE :- 
+
+ => in the above example everty time for loop executes an element is passed
+      from pl/sql engine to sql engine and sql engine executes update command
+      and returns control back to pl/sql engine and this is called context switch ,
+      and this degrades performance. To improve performace use BULK BIND.
+
+BULK BIND :- 
+--------------------
+
+ => BULK BIND reduces context switch between pl/sql engine and sql engine
+       and improves performance.
+
+ => use BULK BIND for bulk insert,bulk update,bulk delete operations.
+
+ => to use BULK BIND use FOR ALL loop instead of for loop.
+
+           FORALL <var> IN <low>..<upp>
+                 statement;
+
+ => FORALL loop allows only one stmt and it must be dml stmt.
+ 
+   DECLARE
+        TYPE empno_array IS TABLE OF NUMBER(4) INDEX BY BINARY_INTEGER;
+        e    empno_array;
+        t1   timestamp;
+        t2   timestamp;
+     BEGIN
+       SELECT empno BULK COLLECT INTO e FROM emp ;
+       t1 :=  current_timestamp ; 
+       FORALL i in e.first..e.last
+            UPDATE emp SET sal = sal + 1000 WHERE empno = e(i);
+       t2  := current_timestamp;
+      COMMIT;
+      DBMS_OUTPUT.PUT_LINE(t2-t1);
+      END;
+        / 
+
+================================================================
+
+ERROR HANDLING / EXCEPTION HANDLING :- 
+----------------------------------------------------------------- 
+
+ 1 syntax errors
+ 2 logical errors
+ 3 runtime errors 
+
+ => errors that are raised during progam execution are called runtime errors.
+
+     ex :-    x   number(3);
+ 
+                x := &x;  => 1000  => runtime error
+
+ => if any statement causes runtime error then program execution is terminated
+      and oracle displays error message. 
+
+=> To replace system generated message with our own simple and user friendly
+      message then we need to handle that runtime error.
+
+ => To handle runtime error include a block called EXCEPTION block.
+
+      DECLARE
+          <declaration-part>;
+      BEGIN
+          <execution-part>;    => stmts causes exception
+      EXCEPTION
+          <error handling-part>;  => stmts handles exception
+       END;
+           /
+
+ => if any statement causes exception then control is transferred to exception
+      block and executes the statements in exception block.
+
+ => exceptions are 2 types 
+ 
+1  system defined
+2  user defined
+
+system defined :- 
+-----------------------
+
+1   ZERO_DIVIDE              => raised when we try to divide number with 0
+2   VALUE_ERROR            => raised when variable type or size mismatches
+3   INVALID_NUMBER        => raised when invalid operation is performed.
+4   NO_DATA_FOUND        => raised when data not found in table
+  
+
+ 
 
 
 
