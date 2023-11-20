@@ -3184,3 +3184,160 @@ program on sorting:
                aobj.meth1();
           }
      }
+
+Comparable : 
+  public class ClassA implements Comparable<ClassA>
+  {
+     String empName;
+     int empId;
+     String empDept;
+
+     public ClassA(String empName, int empId, String empDept){
+          this.empName = empName;
+          this.empId   = empId;
+          this.empDept = empDept;
+     }
+
+     @Override
+     public String toString(){
+          return empName + " " + empId + " " + empDept;
+     }
+     
+     @Override
+     public int compareTo(ClassA o){
+          // return this.empId - o.empId;    // Sorting Based on empId
+          // return this.empName.compareTo(o.empName);  // Sorting based on empName
+          return this.empDept.compareTo(o.empDept); // Sorting based on empDept
+     }
+
+     /*
+          Returns a negative integer if this object is less than the specified object
+          Returns zero if equal to the specified object
+          Returns a positive integer greater thant he specified object
+     */
+  }
+
+  public class ClassB{
+     void meth1(){
+          System.out.println("Passing userDefined class object into ArrayList");
+
+          ArrayList<ClassA> al = new ArrayList<ClassA>();
+
+          ClassA aobj1 = new ClassA("Kishan", 103,"Java");
+          ClassA aobj2 = new ClassA("Ahmed", 104,"Oracle");
+          ClassA aobj3 = new ClassA("John", 102,"AWS");
+          ClassA aobj4 = new ClassA("Lakshmi", 101,"Spring");
+
+          al.add(aobj1);
+          al.add(aobj2);
+          al.add(aobj3);
+          al.add(aobj4);
+
+          System.out.println("---------Before----------");
+          Iterator<ClassA> i = al.Iterator();
+          while(i.hasNext()){
+               System.out.println(i.next());
+          }
+          System.out.println("\n");
+          Collection.sort(al);
+          System.out.println("---------After----------");
+          Iterator<ClassA> i2 = al.Iterator();
+          while(i2.hasNext()){
+               System.out.println(i2.next());
+          }
+     }
+     public static void main(String[] args){
+          ClassB bobj = new ClassB();
+          bobj.meth1();
+     }
+  }
+
+
+
+  public class ClassA{
+     private String empName;
+     private int empId;
+     private String empDept;
+
+     public ClassA(Stirng empName, int empId, String empDept){
+          this.empName = empName;
+          this.empId = empId;
+          this.empDept = empDept;
+     }
+     public String getEmpName(){
+          return empName;
+     }
+     public String getEmpID(){
+          return empID;
+     }
+     public String getEmpDept(){
+          return empDept;
+     }
+
+     @Override
+     public String toString(){
+          return empName+" "+empId+" "+empDept;
+     }
+  }
+
+  public class ClassB{
+     void meth1(){
+          System.out.println("Passing userDefined class object into ArrayList");
+
+          ArrayList<ClassA> al = new ArrayList<ClassA>();
+
+          ClassA aobj1 = new ClassA("Kishan", 103,"Java");
+          ClassA aobj2 = new ClassA("Ahmed", 104,"Oracle");
+          ClassA aobj3 = new ClassA("John", 102,"AWS");
+          ClassA aobj4 = new ClassA("Lakshmi", 101,"Spring");
+
+          al.add(aobj1);
+          al.add(aobj2);
+          al.add(aobj3);
+          al.add(aobj4);
+
+          System.out.println("---------Before----------");
+          Iterator<ClassA> i = al.Iterator();
+          while(i.hasNext()){
+               System.out.println(i.next());
+          }
+          System.out.println("\n");
+
+          Collection.sort(al,new ClassC);
+
+          System.out.println("---------After----------");
+          Iterator<ClassA> i2 = al.Iterator();
+          while(i2.hasNext()){
+               System.out.println(i2.next());
+          }
+     }
+     public static void main(String[] args){
+          ClassB bobj = new ClassB();
+          bobj.meth1();
+     }
+  }
+
+  public class ClassC implements ClassC Comparator<ClassA>{
+     @Override
+     public int compare(ClassA o1, ClassB o2){
+          // return o1.getEmpID() - o2.getEmpID();
+          // return o1.getEmpName().compareTo(o2.getEmpName());
+          return o1.getEmpDept().compareTo(o2.getEmpDept());
+     }
+  }
+
+
+Java 8 Features:
+     A revolutionary version i.e. was released in March 18 2014 by oracle. It includes major upgrades to the java programming which are listed below.
+          - Lambda Expression
+          - Functional Interfaces
+          - Default methods in interface
+          - Methods referances
+          - Stream API
+          - Static methods in interface
+          - optional class
+          - Collectors class
+          - forEach() method
+          - Parallel array sorting
+          - New datetime
+     
