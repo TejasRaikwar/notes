@@ -3366,3 +3366,102 @@ Java 8 Features:
                          - A lambda funtion with multiple parameter.
                          - A lambda funtion with return statement.
                          - A lambda funtion without return statement.
+     
+     Program on lambda expression:
+          
+          @FunctionalInterface
+          public interface InterfaceA{
+               void meth1();
+          }
+
+          @FunctionalInterface
+          public interface InterfaceB{
+               void meth2(int m, int n);
+          }
+
+          @FunctionalInterface
+          public interface InterfaceC{
+               int meth3(int g, int h);
+          }
+
+
+          public class ClassA{
+               System.out.println("Implementing Lambda Expression");
+
+               InterfaceA x = () -> System.out.println("Hello World");
+               x.meth1();
+
+               InterfaceB y = (int k, int l) ->  System.out.println("Addition L "+(k+l));
+               y.meth2();
+
+               InterfaceC z = (int p, int q) -> {
+                    if(p<q){
+                         System.out.println("If block executed");
+                         return 1000;
+                    }
+                    else{
+                         System.out.println("else block executed");
+                         return 1;  
+                    }
+               };
+          }
+
+Method References:
+     - Java 8 intoduces a new future called method referance.
+     - Method reference is an implementation of functional interface.
+     - It is a simple way of defining lambda function/expression.
+     - If lambda expression required to provide implementation of existing method we use method reference.
+     - Operator used for referancing is " :: ".
+     Types of method References:
+          1) Static method reference (Fi---> static method)
+          2) Non-Static method reference (Fi---> Non-Static method)
+          3) Constructor method reference (Fi---> Constructor method)
+     
+     program for method referance : 
+
+
+          public class ClassB{
+               void display(){
+                    ArrayList<Integer> al = new ArrayList<Integer>();
+                    al.add(5);
+                    al.add(3);
+                    al.add(2);
+                    al.add(1);
+                    al.add(4);
+                    System.out.println("Before : "+al);
+                    Collections.sort(al);
+                    System.out.println("After : "+al);
+               }
+
+               static void smg(){
+                    System.out.println("Java is awesome");
+               }
+
+               ClassB(){
+                    System.out.println("this is constructor referancing");
+               }
+
+               public static void main(String[] args){
+                    new ClassB().display();
+               }
+          }
+
+
+          public interface InterfaceA{
+               void meth1();
+          }
+
+
+          public class ClassA{
+               void show(){
+                    System.out.println("Implementing lambda Expression");
+                    //InterfaceA x = new ClassB()::display; // Non-Static referancing
+                    //InterfaceA x = new ClassB::msg;       // Static referancing
+                    InterfaceA x = ClassB::new;             // Constructor referancing
+
+                    // while referancing we dont need to use "()" for method_name
+               }
+               public static void main(String[] args){
+                    new ClassA().show();
+               }
+          }
