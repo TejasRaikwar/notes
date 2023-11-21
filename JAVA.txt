@@ -3340,4 +3340,29 @@ Java 8 Features:
           - forEach() method
           - Parallel array sorting
           - New datetime
-     
+
+
+1) Lambda Expression:
+     - Lambda Expression or Lambda Functions is a new feature added in java 8 version.
+     - Lambda funtion is Anononmyous funtion which does not have any name.
+
+     Difference between Lambda Expression and method;
+      => A method in java having the following components.
+          - modifier
+          - return type
+          - Method name
+          - Parameters
+          - body
+      => A Lambda expression is an Anononmyous funtion, it has the following components
+          - Without Name
+          - Without return type, java compiler is able infer return type based on the code, you have written.
+          - Parameter list.
+          - Body.
+
+               Defining lambda funtion:
+                    A lambda funtion can be defined in different ways:
+                         - A lambda funtion without Parameters.
+                         - A lambda funtion with single parameter.
+                         - A lambda funtion with multiple parameter.
+                         - A lambda funtion with return statement.
+                         - A lambda funtion without return statement.
