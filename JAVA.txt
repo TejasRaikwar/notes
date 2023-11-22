@@ -3465,3 +3465,160 @@ Method References:
                     new ClassA().show();
                }
           }
+
+
+
+Program : 
+    @FunctionalInterface
+    public interface interfaceA{
+          void meth1();
+    }
+    @FunctionalInterface
+    public interface interfaceB{
+          void meth2(int m, int n);
+    }
+
+    public class ClassA{
+          void display(){
+              System.out.println("Implementing Lambda Expression");
+
+              //InterfaceA x = (int p) -> System.out.println("hello World : "+p);
+              //InterfaceA x = (p) -> System.out.println("hello World : "+p);
+              InterfaceA x = p -> System.out.println("hello World : "+p);
+              
+              
+              //InterfaceB y = (int g, int h) -> System.out.println("Addition : "+(g+h));
+              InterfaceB y = (g, h) -> System.out.println("Addition : "+(g+h));
+              //InterfaceB y = g,h -> System.out.println("Addition : "+(g+h));   // Compile time error
+
+              x.meth1(100);
+              y.meth1(999,1);
+          }
+          public static void main(String [] args){
+               new ClassA().display();
+          }
+    }
+
+
+Stream api:
+     - Java 8 streams are used to manipulate data of collections.
+     - A stream is not a data structure instead it takes input from a collection and uses lambda expressions to manipulate the data.
+     - Streams are "used for reading" the elements but "not for storing" them.
+     - When used properly, stream api allows us to reduce a huge amount of code.
+
+     StreamAPI methods:
+          - stream()
+          - filter()
+          - map()
+          - count()
+          - sorted()
+          - collect()
+          - Collectors Class
+
+
+
+     Consumer vs predicate vs function vs supplier
+     -----------------------------------------------------------------------------------------
+     |type       | abstract methods    |     input                 |   return result as      | 
+     |-----------|---------------------|---------------------------|-------------------------|
+     |consumer   | void accept(T t)    |     accepts one argument  |   it returns no result  |
+     |-----------|---------------------|---------------------------|-------------------------|
+     |predicate  | boolean test(T t)   |    accepts one argument   |   it returns a value    |
+     |           |                     |                           |   i.e. either true/false|
+     |-----------|---------------------|---------------------------|-------------------------|
+     |funtion    | R apply(T t)        |   Accepts one argument    |   it returns some value |
+     |-----------|---------------------|---------------------------|----------------------   |
+     |supplier   | T get()             |   NILL                    |   it returns some value |
+     -----------------------------------------------------------------------------------------
+
+
+     program :
+          public class ClassA{
+               void meth1(){
+                    ArrayList<Integer> al = new ArrayList<Integer>();
+                    al.add(10);
+                    al.add(20);
+                    al.add(30);
+                    al.add(40);
+                    al.add(50);
+
+                    Iterator<Integer> i = al.iterator();
+                    while(i.hasNext()){
+                         System.out.println(i.next());
+                    }
+                    System.out.println("Reteriving the data by using Stream API");
+                    al.forEach(data -> System.out.println(data));
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    aobj.meth1();
+               }
+          }
+
+
+     program : 
+          public class ClassA{
+               void meth1(){
+                    ArrayList<String> al = new ArrayList<String>();
+                    al.add("Sujatha");
+                    al.add("Puja");
+                    al.add("Sudha");
+                    al.add("Lakshmi");
+                    al.add("Anjum");
+
+                    /*
+                         Stream<String> s1 = al.stram();
+                         Stream<String> s2 = s1.filter(data -> data.length()=<5);
+                         long val = s2.count();
+                         System.out.println("There are "+ val +" elements whose length is <=5");
+                    */
+                    System.out.println("There are "+
+                         al.stream().filter(data -> data.lenth()<=5).count()
+                      +" elements whose length is <=5");
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    aobj.meth1();
+               }
+          }
+     program:
+          public class ClassA{
+               void meth1(){
+                    ArrayList<Integer> al = new ArrayList<Integer>();
+                    al.add(10);
+                    al.add(20);
+                    al.add(30);
+                    al.add(40);
+                    al.add(50);
+                    System.out.print("Before "+al);
+                    /*
+                         Stream<Integer> s1 = al.stream();
+                         Stream<integer> s2 = s1.map(data -> data*2);
+                         List<Iteger> li = s2.collect(Collectors.toList());
+                    */
+                    System.out.println("After "+al.stream().map(data->data*2).collect(Collectors.toList()));
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    aobj.meth1();
+               }
+          }
+     program:
+          public class ClassA{
+               void meth1(){
+                    ArrayList<Integer> al = new ArrayList<Integer>();
+                    al.add(4);
+                    al.add(5);
+                    al.add(1);
+                    al.add(2);
+                    al.add(3);
+                    System.out.println("Before : "+al);
+                    // Collections.sort(al);
+                    List<Integer> li = al.stream().sorted().collect(Collectors.toList());
+                    System.out.println("After : "+li);
+               }
+               public static void main(String[] args){
+                    ClassA aobj = new ClassA();
+                    aobj.meth1();
+               }
+          }
