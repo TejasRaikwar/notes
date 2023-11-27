@@ -98,12 +98,12 @@ Relational Model :-
  RDBMS softwares :- 
  ---------------------------
 
- oracle                  from oracle corp
- mysql                  from oracle corp
+ oracle                from oracle corp
+ mysql                 from oracle corp
  sql server            from microsoft
- db2                     from ibm
- postgresql           from postgresql forum development
- rds                      from amazon
+ db2                   from ibm
+ postgresql            from postgresql forum development
+ rds                   from amazon
 
   ORDBMS :- 
   ----------------
@@ -157,13 +157,13 @@ DB Development Life Cycle :-
  
               Developers			    DBAs
 
-             creating tables		    installation of oracle		
-             creating views                                 creating db 
-             creating synonyms                          creating userids 
-             creating sequences                         db backup & restore
-             creating indexes                              db export & import
-             creating procedures                        db upgradation & migration
-             creating functions       		    performance tuning                     
+             creating tables		  installation of oracle		
+             creating views          creating db 
+             creating synonyms       creating userids 
+             creating sequences      db backup & restore
+             creating indexes        db export & import
+             creating procedures     db upgradation & migration
+             creating functions      performance tuning                     
              creting packages
              creating  triggers
              writing queries
@@ -178,7 +178,6 @@ DB Development Life Cycle :-
 
  summary :- 
  ---------------
-
  what is db ?
  what is dbms ?
  what is rdbms ?
@@ -220,20 +219,18 @@ DB Development Life Cycle :-
  => in " on cloud " db is deployed in the server managed by cloud 
      service provider for ex amazon.
  
-             AMAZON       	AWS  (AMAZON WEB SERVICES)
+             AMAZON      AWS  (AMAZON WEB SERVICES)
              MICROSOFT	AZURE
              GOOGLE		GCP   (GOOGLE CLOUD PLATFORM)
-             ORACLE                     OCI    (ORACLE CLOUD INFRASTRCTURE)
+             ORACLE      OCI    (ORACLE CLOUD INFRASTRCTURE)
 
 CLIENT/SERVER Architecture :- 
--------------------------------------------
-
+------------------------------
  1 server
  2 client 
 
  server :- 
  ------------
-
   => server is a system where oracle is installed and running
   => in server oracle manages following two memories
 
