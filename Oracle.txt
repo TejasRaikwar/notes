@@ -233,27 +233,23 @@ CLIENT/SERVER Architecture :-
  ------------
   => server is a system where oracle is installed and running
   => in server oracle manages following two memories
-
         1  INSTANCE
         2  DB
-
   => instance is created in ram and acts as temporary storage
   => db is created in hard disk and acts as permanent storage
 
 client :- 
 ----------
-
  => client is also a system where users can
 
-   1 connects to server
-   2 submit requests 
-   3 receive response
+     1 connect to server
+     2 submit requests 
+     3 receive response
 
  client tools :- 
  ----------------
- 
- SQLPLUS (cui)
- SQL DEVELOPER (gui)
+     SQLPLUS (cui)
+     SQL DEVELOPER (gui)
 
  USER------SQLPLUS----------------------------ORACLE-------DB
 
@@ -266,7 +262,7 @@ client :-
  => user communicates with oracle by sending commands called queries.
  => a query is a command/instruction/question submitted to oracle to
       perform some operation over db.
-=>  SQL is originally introduced by IBM and initial name of this lang was
+ =>  SQL is originally introduced by IBM and initial name of this lang was
       "SEQUEL"  and later it is renamed to SQL.
  => SQL is common to all rdbms softwares. 
 
@@ -278,7 +274,7 @@ client :-
 
 => based on the operations over db SQL is divided into following sublanguages
 
-       	 DDL (DATA DEFINITION LANG)
+      DDL (DATA DEFINITION LANG)
 	 DML (DATA MANIPULATION LANG)
 	 DQL (DATA QUERY LANG)
 	 TCL  (TRANSACTION CONTROL LANG)
@@ -286,26 +282,26 @@ client :-
 		
 		               		 SQL
 
- 	DDL		DML	DQL	TCL		DCL
+ 	DDL		  DML	  DQL	     TCL		     DCL
 
-	CREATE		INSERT	SELECT	COMMIT		GRANT
-	ALTER		UPDATE		ROLLBACK	REVOKE
-	DROP		DELETE		SAVEPOINT
-	TRUNCATE	MERGE
-	RENAME		INSERT ALL
+	CREATE	 INSERT	 SELECT	     COMMIT		GRANT
+	ALTER	 UPDATE		          ROLLBACK	     REVOKE
+	DROP		 DELETE		          SAVEPOINT
+	TRUNCATE	 MERGE
+	RENAME	 INSERT ALL
 	FLASHBACK
 	PURGE
  
   DATA & DATA DEFINITION :- 
   --------------------------------------
  
-EMPID   ENAME      SAL         DATA DEFINITION
-   1	A	6000       DATA 
+   EMPID   ENAME      SAL         DATA DEFINITION
+   1	       A	       6000         DATA 
 
   note :-   
 
    => SQL is not case sensitive 
-   => sql commands must be terminated with ';' 
+   => SQL commands must be terminated with ';' 
    
  SCHEMA :- 
  ----------------
@@ -316,9 +312,9 @@ EMPID   ENAME      SAL         DATA DEFINITION
           
   SERVER
           DATABASE
-                      USER
-                            TABLE
-                                    DATA
+                    USER
+                         TABLE
+                               DATA
   
   SERVER
           ORCL 
@@ -330,7 +326,7 @@ EMPID   ENAME      SAL         DATA DEFINITION
 
   => to connect to oracle open sqlplus 
 
-     USERNAME   :-  SYSTEM
+     USERNAME   :- SYSTEM
      PASSWORD  :-  TIGER
 
     OR
