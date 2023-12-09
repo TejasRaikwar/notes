@@ -3622,3 +3622,12 @@ Stream api:
                     aobj.meth1();
                }
           }
+     
+     optional class:
+          java 
+
+
+
+
+------------------------------------
+from 25-11
