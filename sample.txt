@@ -1,0 +1,12 @@
+case styles in programming:
+    1. camelCase
+    2. PascalCase
+    3. snake_case
+    4. kebab-case
+
+Data types available in c lang and their format specifier:
+    data type        size            format specifier
+      int          2/4 bytes           %d   or  %i
+     float          4bytes             %f   or  %F
+     double         8bytes             %lf
+     char           1byte              %c 
