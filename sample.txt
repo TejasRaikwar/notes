@@ -6,7 +6,11 @@ case styles in programming:
 
 Data types available in c lang and their format specifier:
     data type        size            format specifier
-      int          2/4 bytes           %d   or  %i
+     int           2/4 bytes           %d   or  %i
      float          4bytes             %f   or  %F
      double         8bytes             %lf
      char           1byte              %c 
+     unsigned long                     %lu
+
+
+
