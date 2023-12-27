@@ -1,0 +1,84 @@
+
+Abstaction : 
+- We can not create object for abstract class, but abstract class can contain constructor.
+- We can not 
+
+        Note: 
+        - The purpose of CONSTRUCTOR is to initialize an onject.
+        - The purpose of NEW KEYWORD/OPERATOR is to create an object.
+
+- The main objective of new operator is to create an object.
+- The main purpose of constructor is to initialize object.
+- first object will be created using new operator and then initialization will be performed by constructor.
+    
+        abstract class Person{        //without constructor
+                String name;
+                int age;
+        }
+        
+        class Student extends Person{
+                int rollno;
+                int marks;
+                
+                Student(String name, int age, int rollno, int marks){
+                        this.name = name;
+                        this.age = age;
+                        this.rollno = rollno;
+                        this.marks = marks;
+                }
+        }
+        class Teacher extends Person{
+                double salary;
+                String subject;
+
+                Teacher(String name, int age, double salary, String subject){
+                        this.name = name;
+                        this.age = age;
+                        this.salary = salary;
+                        this. subject = subject;
+                }
+        }
+
+        
+        // abstract class with constructor
+        
+        abstract class Person{      // with constructor
+                String name;
+                int age;
+
+                Person(String name, int age){
+                        this.name = name;
+                        this.age = age;
+                }
+        }
+                class Student extends Person{
+                int rollno;
+                int marks;
+                
+                Student(String name, int age, int rollno, int marks){
+                        super(name,age);        // super();   //super keyword used for calling the parent's constructor
+                        this.rollno = rollno;
+                        this.marks = marks;
+                }
+        }
+
+
+
+
+  - Anyway we cant create object for abstract class and interface but abstract class contain constructor but interface doesnt, why?
+  ans :  
+        - The main purpose constructor is to perform initialization of an object i.e. to perform initialization for instance variables
+        - Abstract class can contain isntance variables which are required for child class object, to perform initialization for these instance variables constructor concept is required for abstract classes.
+        - Every variable present inside interface is always, public static final whether we are declaring or not, hence, there is not chance existing instance variables inside interface. because of this constructor concept not required for interfaces.
+
+
+ - If Everything is abstact, it is highly reccomended to go for interface but not abstact class.
+ - We can replace interface with abstact class, but it not a good programming practice.(this something like recruiting IAS officer for swipping purpose.)
+ - interface x {
+
+ }
+ - while implementing interface we can extend any other class and hence we wont inheritance benifit.
+ - While extending abstract class we cant extend any other class and hence we are missing inheritance benifit.
+   ex : class test extends A implements x{
+        // in this case object creation is not costly.
+   }
