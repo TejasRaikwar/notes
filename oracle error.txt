@@ -11,7 +11,7 @@ Version 21.3.0.0.0
 Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
 Enter user-name: system
-Enter password:
+Enter password: 4636    // for my Oracle
 Last Successful login time: Thu Nov 02 2023 08:01:21 +05:30
 
 Connected to:

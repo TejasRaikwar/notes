@@ -199,7 +199,7 @@ DB Development Life Cycle :-
 
  1,2,3,4,5,6,7,8i,9i,10g,11g,12c,18c,19c,21c,23c 
 
-          i   =>  internet
+          i  =>  internet
           g  =>  grid
           c  =>  cloud 
 
@@ -308,7 +308,7 @@ client :-
 
   => schema means user.
   => a user in oracle db is called schema.
-  => objects created by user are called schema objects for ex tables.
+  => objects created by user are called schema objects. for ex tables.
           
   SERVER
           DATABASE
