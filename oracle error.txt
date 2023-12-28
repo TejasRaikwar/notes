@@ -18,8 +18,7 @@ Connected to:
 Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-SQL> create user test identified by test
-  2  ;
+SQL> create user test identified by test;
 create user test identified by test
             *
 ERROR at line 1:
@@ -97,3 +96,9 @@ Version 21.3.0.0.0
 
 SQL>
 
+
+
+
+uers in my oracle : 
+system/4636
+test/test
