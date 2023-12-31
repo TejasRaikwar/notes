@@ -102,3 +102,30 @@ SQL>
 uers in my oracle : 
 system/4636
 test/test
+tejas/tejas
+
+
+
+
+
+--------------------------------------------------------------------------------
+SQL> alter session set "_oracle_script"=true;
+
+Session altered.
+
+SQL> create user tejas identified by tejas
+  2  default tablespace users
+  3  quota unlimited on users;
+
+User created.
+
+SQL> grant connect,resource to tejas;
+
+Grant succeeded.
+
+SQL> grant dba to tejas
+  2  ;
+
+Grant succeeded.
+
+SQL>
