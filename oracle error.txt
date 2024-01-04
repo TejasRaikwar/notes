@@ -101,10 +101,8 @@ SQL>
 
 uers in my oracle : 
 system/4636
-test/test
 tejas/tejas
-
-
+tanmay/tanmay
 
 
 
