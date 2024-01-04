@@ -666,7 +666,7 @@ NOTE :- above insert commands inserted data into instance (ram) which is tempora
 
  inserting nulls :- 
  ----------------------
-
+ffff
  => null means blank or empty
  => it is not equal to 0 or space
  => nulls can be inserted in two ways 
