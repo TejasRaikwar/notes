@@ -428,10 +428,10 @@ char(size) :-
             sachin----
                           wasted
 
-           ravi------ 
+            ravi------ 
                           wasted 
 
- => in char datatype extra bytes are wasted , so char is not recommended
+ =>   in char datatype extra bytes are wasted , so char is not recommended
       for variable length fields and it is recommended for fixed length fields
 
     ex :-    gender      char(1)
@@ -601,12 +601,12 @@ TIMESTAMP :-
  
      ex :-     DESC  EMP
 
-                 EMPID                NUMBER(4)
-	 ENAME              VARCHAR2(10)
- 	JOB                     VARCHAR2(10)
- 	SAL                     NUMBER(7,2)
- 	DOJ                     DATE
- 	DNAME               VARCHAR2(10)
+     EMPID                NUMBER(4)
+	ENAME                VARCHAR2(10)
+ 	JOB                  VARCHAR2(10)
+ 	SAL                  NUMBER(7,2)
+ 	DOJ                  DATE
+ 	DNAME                VARCHAR2(10)
 
  26-aug-23 
 
