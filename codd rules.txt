@@ -1,38 +1,87 @@
-Rule 0: The Foundation Rule :
-The database must be in relational form. So that the system can handle the database through its relational capabilities.
+These rules were developed by Dr. E F. Codd in 1985,
 
-Rule 1: Information Rule :
-A database contains various information, and this information must be stored in each cell of a table in the form of rows and columns.
+Codd`s 12 rules: 
+Rule 0 : The foundation rule: 
+     For any system that is advertised as, or claimed to be, a relational database management system, that system must be able to manage databases entirely through its relational capabilities.
+    
+    // store similar kind of information
+    // store all information in the form of relational
+    // like in family all the members of family are related to each other
+    // Ex : IRCTC should store only data about trains, it should not store bus/airlines data 
 
-Rule 2: Guaranteed Access Rule :
-Every single or precise data (atomic value) may be accessed logically from a relational database using the combination of primary key value, table name, and column name.
+Rule 1 : The information rule:
+     All information in a relational database is represented explicitly at the logical level and in exactly one way-by values in tables.
 
-Rule 3: Systematic Treatment of Null Values :
-This rule defines the systematic treatment of Null values in database records. The null value has various meanings in the database, like missing the data, no value in a cell, inappropriate information, unknown data and the primary key should not be null.
+     // Easy way: data must be stored in the form of tables 
 
-Rule 4: Active/Dynamic Online Catalog based on the relational model :
-It represents the entire logical structure of the descriptive database that must be stored online and is known as a database dictionary. It authorizes users to access the database and implement a similar query language to access the database.
+     // three schema of levels: 
+            external level   : user
+            logical level    : schema structure
+            Physical level   : actual data
 
-Rule 5: Comprehensive Data SubLanguage Rule :
-The relational database supports various languages, and if we want to access the database, the language must be the explicit, linear or well-defined syntax, character strings and supports the comprehensive: data definition, view definition, data manipulation, integrity constraints, and limit transaction management operations. If the database allows access to the data without any language, it is considered a violation of the database.
+Rule 2: The guaranteed access rule:
+     Each and every datum(atomic value) in a relational database is guaranteed to be logically accessible by resorting to a combination of the table name, primary key value, and column name.
 
-Rule 6: View Updating Rule :
-All views table can be theoretically updated and must be practically updated by the database systems.
+      // Whatever data is stored in the database each value must be accessible
+      // To acces the data we need table name, primary key, and col. name
+      // this rule focuses on primary key
 
-Rule 7: Relational Level Operation (High-Level Insert, Update and delete) Rule :
-A database system should follow high-level relational operations such as insert, update, and delete in each level or a single row. It also supports union, intersection and minus operation in the database system.
 
-Rule 8: Physical Data Independence Rule :
-All stored data in a database or an application must be physically independent to access the database. Each data should not depend on other data or an application. If data is updated or the physical structure of the database is changed, it will not show any effect on external applications that are accessing the data from the database.
+Rule 3: Systematic treatment of null values:    (null::blank)
+     Null values ( distinct from the empty character string or a string of blank characters and distinct from zero or any other number. ) are supported in fully relational DBMS for representing missing information and inapplicable information in a systematic way, independent of data type.
+     
+     // treat null values carefully, it can give inconsistent results.
+     // try there should not be any null values.
+     // there is no data, try to add dummy data but do not keep it blank.
 
-Rule 9: Logical Data Independence Rule :
-It is similar to physical data independence. It means, if any changes occurred to the logical level (table structures), it should not affect the user's view (application). For example, suppose a table either split into two tables, or two table joins to create a single table, these changes should not be impacted on the user view application.
+Rule 4: Dynamic online catalog based on the relational model:
+     The database description is reprented at the logical level in the same way as oridinary data, so that authorized users can apply the same relational lang. to its interrogation as they apply to the regular data.
 
-Rule 10: Integrity Independence Rule :
-A database must maintain integrity independence when inserting data into table's cells using the SQL query language. All entered values should not be changed or rely on any external factor or application to maintain integrity. It is also helpful in making the database-independent for each front-end application.
+     // Data dictionary / catalog
+     // Ex: like if we created one database : some tables, views, so while creating the database, we would had some metadata about the data ( what is the name of table , which table have which primary key, foreign key (information related to tables))
+     // store data dictionary / catalog just like we store normal data
 
-Rule 11: Distribution Independence Rule :
-The distribution independence rule represents a database that must work properly, even if it is stored in different locations and used by different end-users. Suppose a user accesses the database through an application; in that case, they should not be aware that another user uses particular data, and the data they always get is only located on one site. The end users can access the database, and these access data should be independent for every user to perform the SQL queries.
+Rule 5: The comprehensive data SubLanguage rule :
+     A relational system may support several languages and various modes of terminal use(for ex, the fill-in-blanks mode). However, there must be at least one language whose statements are expressible, per some well-defined systax, as character strings and that is comprehensive in supporting all of the following items
+         1. data defination.
+         2. view defination
+         3. data manipulation
+         4. integrity constraints
+         5. authorization
+         6. transaction boundaries(begin, commit and rollback)
 
-Rule 12: Non Subversion Rule :
-The non-submersion rule defines RDBMS as a SQL language to store and manipulate the data in the database. If a system has a low-level or separate language other than SQL to access the database system, it should not subvert or bypass integrity to transform data.
+
+Rule 6: The view updating rule:
+     all the view that are theoretically updatable are also updatable by the system.
+
+     // as views do not have physical existance, give same importance to views just like tables.
+
+Rule 7: Possible for high-level insert, update and delete:
+     The capability of handling a base relation or a derived relation as a single operand applies not only to the retrieval of data but also to the insertion, update and deletion of data.
+
+     // insert, update and delete facility should be available.
+
+Rule 8: Physical data independence:
+     Application programs and terminal activities remain logically unimpaired whenever any changes are made in either storage representatoins or access methods.
+
+     // if we make some changes in data it should not affect the user.
+
+Rule 9: Logical data independence:
+     Application programs and terminals activities remain logically unimpaired when information-preserving changes of any kind that theoretically permit unimpaired are made to the base tables.
+
+     //  if we change schema ( like inserted one new column or make some changes in column or change the name of table), it should not affect the users.
+
+Rule 10: Integrity independence:
+     Integrity constraints specific to a particular relational database must be definable in the relational data SubLanguage and storable in the catalog, not in the application programs.
+
+     // integrity constraints (null, not null) should be done in the backend not in the frontend(application program)
+
+
+Rule 11: Distribution independence:
+     The end-user must not be able to see that the data is distributed over various locations. users should always get the impression that the data is located at one site only.
+
+     
+Rule 12: The non-subversion rule:
+     If a relational system has a low-level ( single-record-at-a-time ) language, that low level cannot be used to subvert or bypass the integrity rules and constraints expressed in the higher-level relational lang(multiple-records-at-a-time)
+    
+     // while compiling the high-level to low-level it should not violet the intigrity constraints or there should not be any loop hole
