@@ -686,8 +686,7 @@ NOTE :- above insert commands inserted data into instance (ram) which is tempora
  method 2 :- 
  ---------------
 
-  SQL>INSERT INTO emp(empid,ename,doj,dname)
-                             VALUES(106,'bhanu',sysdate,'sales');
+  SQL>INSERT INTO emp(empid,ename,doj,dname) VALUES(106,'bhanu',sysdate,'sales');
  
   remaining two fields filled with nulls
 
