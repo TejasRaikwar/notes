@@ -9604,13 +9604,3 @@ PRAGMA EXCEPTION_INIT :-
                    abc   exception; 
 
  => in program if any statement causes -2290 then oracle raises exception "abc" .
- 
- 
-  
-
-
-
-
-
-
-
