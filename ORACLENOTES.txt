@@ -349,11 +349,9 @@ EMPID   ENAME      SAL         DATA DEFINITION
     
            GRANT DBA TO VIJAY ; 
 
-24-AUG-23
 
  how to download oracle 21c 
  -------------------------------------
-
  Editions :- 
  ---------------
 
@@ -393,11 +391,11 @@ installation :-
 
  	CHAR		   NUMERIC	 DATE		BINARY
 	 
-  ASCII              UNICODE            number(p)	date		bfile
-                                                      number(p,s)	timestamp	blob
+  ASCII          UNICODE            number(p)	date		  bfile
+                                    number(p,s)	timestamp	  blob
  char	       nchar
- varchar2         nvarchar2
- long                 nclob
+ varchar2        nvarchar2
+ long            nclob
  clob
 
 char(size) :- 
