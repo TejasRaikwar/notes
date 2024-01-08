@@ -749,10 +749,9 @@ WHERE clause :-
 => employees not working for  sales dept ?
 
      SELECT * FROM emp WHERE dname <> 'sales' ;
-
      SELECT * FROM emp WHERE dname <> 'SALES' ; => no rows
 
- note :-  in oracle strings are case sensitive i.e. lowercase and uppercase
+ Note :-  in oracle strings are case sensitive i.e. lowercase and uppercase
  strings are not same.
 
  compound condition :- 
@@ -763,15 +762,15 @@ WHERE clause :-
 
      WHERE  cond1  AND   cond2         result
 	    T	          T	             T
-                     T                     F                  F
-                     F                     T                  F
-                     F                     F                  F
+         T               F                 F
+         F               T                 F
+         F               F                 F
 
    WHERE	   cond1  OR    cond2            result
-	    T	        T		T
-                     T	        F                        T
-                     F                   T                        T
-                     F                   F                        F
+	         T	        T	               T
+              T	        F                T
+              F             T                T
+              F             F                F
  
  => employees working as clerk,manager ?
 
