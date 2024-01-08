@@ -200,9 +200,9 @@ DB Development Life Cycle :-
      service provider for ex amazon.
  
              AMAZON       	AWS  (AMAZON WEB SERVICES)
-             MICROSOFT	AZURE
-             GOOGLE		GCP   (GOOGLE CLOUD PLATFORM)
-             ORACLE                     OCI    (ORACLE CLOUD INFRASTRCTURE)
+             MICROSOFT	     AZURE
+             GOOGLE		     GCP   (GOOGLE CLOUD PLATFORM)
+             ORACLE           OCI    (ORACLE CLOUD INFRASTRCTURE)
 
 CLIENT/SERVER Architecture :- 
 -------------------------------------------
