@@ -691,8 +691,8 @@ Displaying Data :-
 
  syn :-  SELECT  columns / *    FROM  tabname ; 
 
-            sql     =    english 
-           queries =  sentences
+           sql     =   english 
+           queries =   sentences
            clauses =   words
 
 => display all the data from emp table ?
@@ -706,10 +706,10 @@ Displaying Data :-
 => employee names,jobs,doj ?
 
     SELECT ename,job,doj FROM emp ; 
-      
+ 
+
 WHERE clause :- 
 ------------------------
-
 => used to get specific row/rows from table based on a condition.
 
      SELECT columns
