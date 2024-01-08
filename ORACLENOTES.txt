@@ -761,16 +761,16 @@ WHERE clause :-
       compound condition.
 
      WHERE  cond1  AND   cond2         result
-	    T	          T	             T
-         T               F                 F
-         F               T                 F
-         F               F                 F
+	        T	            T	           T
+             T             F             F
+             F             T             F
+             F             F             F
 
-   WHERE	   cond1  OR    cond2            result
-	         T	        T	               T
-              T	        F                T
-              F             T                T
-              F             F                F
+   WHERE	   cond1  OR    cond2       result
+	         T	        T	          T
+              T	        F           T
+              F             T           T
+              F             F           F
  
  => employees working as clerk,manager ?
 
