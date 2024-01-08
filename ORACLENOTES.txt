@@ -206,13 +206,11 @@ DB Development Life Cycle :-
 
 CLIENT/SERVER Architecture :- 
 -------------------------------------------
-
  1 server
  2 client 
 
  server :- 
  ------------
-
   => server is a system where oracle is installed and running
   => in server oracle manages following two memories
 
@@ -224,7 +222,6 @@ CLIENT/SERVER Architecture :-
 
 client :- 
 ----------
-
  => client is also a system where users can
 
    1 connects to server
