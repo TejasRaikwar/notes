@@ -175,9 +175,6 @@ DB Development Life Cycle :-
 
 ==========================================================
 
-22-aug-23 		ORACLE
-                                                =======
-
  => oracle is basically a rdbms product from oracle corp and also supports
       features of ordbms and used to manage database.
 
@@ -185,7 +182,6 @@ DB Development Life Cycle :-
 
  versions of oracle :- 
  --------------------------
-
  1,2,3,4,5,6,7,8i,9i,10g,11g,12c,18c,19c,21c,23c 
 
           i   =>  internet
@@ -193,18 +189,13 @@ DB Development Life Cycle :-
           c  =>  cloud 
 
  => from 8 onwards suffix "i" is added because oracle supports internet applications
-
  => grid means collection of servers , from 10g onwards oracle db can be
       accessed through mutliple servers and advantage of grid is if one 
       server is down we can access db through another server.
-
  => from 12c onwards oracle db can deployed in
-
       1   on premises server
       2   on cloud  server
-
  => in " on premises "  db is deployed in the server managed by client.
-
  => in " on cloud " db is deployed in the server managed by cloud 
      service provider for ex amazon.
  
