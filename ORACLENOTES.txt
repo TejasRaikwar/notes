@@ -530,8 +530,8 @@ TIMESTAMP :-
    ex :-   T     TIMESTAMP
 
             25-AUG-23 8:12:20.123  AM +5:30
-           --------------- ----------  ----          -------
-            DATE         TIME      MS          TZ
+           ---------- ----------   -- -------
+            DATE         TIME      MS  TZ
 
  => memory varies from 9 to 13 bytes depends on milliseconds
 
