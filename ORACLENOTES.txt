@@ -68,10 +68,10 @@ Relational Model :-
       11     rahul        40       del
       12     vijay         25       hyd
 
-       Database =   collection of tables
+       Database  =   collection of tables
        TABLE     =   collection of rows and columns
        ROW       =   collection of field values
-       COLUMN =   collection of values assigned to one field
+       COLUMN    =   collection of values assigned to one field
 
   => every table must contain primary key to uniquely identify the records
  
@@ -87,10 +87,10 @@ Relational Model :-
  5 supports data sharing 
  6 supports transactions (ACID properties) 
 
-   A   atomocity
-   C   consistency
+   A    atomocity
+   C    consistency
    I    isolation
-   D   durability
+   D    durability
 
  RDBMS softwares :- 
  ---------------------------
@@ -106,27 +106,19 @@ Relational Model :-
   ----------------
 
   => Object Relational DBMS.
-
   => it is the combination of RDBMS & OOPS.
-  
           ORDBMS =  RDBMS + OOPS (reusability)
-
  => in ORDBMS also data organized in tables i.e. rows and cols
-
  => RDBMS doesn't support reusability but ORDBMS supports reusability.
 
  ordbms softwares :- 
 --------------------------
-
  oracle
  sql server
  postgresql 
 
-21-aug-23 
-
 DB Development Life Cycle :- 
 -----------------------------------------
-
  Analysis
  Design
  Development
@@ -148,26 +140,25 @@ DB Development Life Cycle :-
  --------------------
 
  => DB Development means creating tables in db.
-
  => DB is developed by   Developers & DBAs (DB Admin) by using any rdbms.
       tool like oracle,mysql etc.
  
               Developers			    DBAs
 
              creating tables		    installation of oracle		
-             creating views                                 creating db 
-             creating synonyms                          creating userids 
-             creating sequences                         db backup & restore
-             creating indexes                              db export & import
-             creating procedures                        db upgradation & migration
-             creating functions       		    performance tuning                     
+             creating views            creating db 
+             creating synonyms         creating userids 
+             creating sequences        db backup & restore
+             creating indexes          db export & import
+             creating procedures       db upgradation & migration
+             creating functions        performance tuning                     
              creting packages
              creating  triggers
              writing queries
 
     oracle 11g ver  =========> 19c/21c         upgradation
 
-    mysql  ==================> oracle     migration 
+    mysql  ==================> oracle          migration 
 
  => DB is tested by QA (Quality Assurance) team by using some tools called testing tools
 
