@@ -99,11 +99,11 @@ Relational Model :-
  ---------------------------
 
  oracle                  from oracle corp
- mysql                  from oracle corp
- sql server            from microsoft
+ mysql                   from oracle corp
+ sql server              from microsoft
  db2                     from ibm
- postgresql           from postgresql forum development
- rds                      from amazon
+ postgresql              from postgresql forum development
+ rds                     from amazon
 
   ORDBMS :- 
   ----------------
