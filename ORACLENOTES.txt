@@ -36,12 +36,9 @@ Evolution of dbms :-
 ---------------------------
  
  1960		fms   (file mgmt system)
-
  1970		hdbms (hierarchical dbms)
-		ndbms (network dbms)
-
+		     ndbms (network dbms)
  1980		rdbms  (relational dbms)
-
  1990		ordbms (object relational dbms)
 
  Data Models :- 
