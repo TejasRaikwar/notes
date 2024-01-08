@@ -445,8 +445,8 @@ VARCHAR2 :-
       a-z,A-Z,0-9,special chars.
  
            ex  :-    panno   char(10)
-                       vehno   char(10)
-                       email    varchar2(20)
+                     ehno    char(10)
+                     email   varchar2(20)
 
 LONG :- 
  ------------
@@ -461,8 +461,6 @@ CLOB :-     (character large object)
 => allows character data upto 4GB
 
    ex :-   feedback   CLOB 
-
-25-AUG-23 
 
 nchar/nvarchar2/nclob :-      (n  => national)
 ---------------------------------
@@ -521,8 +519,8 @@ DATE :-
 
       INPUT :-  DD-MON-YYYY
 
-      STORES :-  DD MM  YYYY  HH  MI  SS
-                          1    1       2       1     1    1 
+      STORES :-  DD   MM   YYYY  HH  MI  SS
+                 1    1     2     1  1    1 
 
 TIMESTAMP :- 
 --------------------
