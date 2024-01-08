@@ -780,7 +780,6 @@ WHERE clause :-
 
     SELECT * FROM emp WHERE dname='sales' AND sal>5000; 
     
-29-AUG-23
 
  => employees whose id = 100,103,105 ? 
 
@@ -798,16 +797,16 @@ WHERE clause :-
 
    STUDENT
    SNO   SNAME  S1   S2    S3
-   1        A             80    90    70
-   2       B              30   60    50
+   1        A   80   90    70
+   2        B   30   60    50
 
   list of students who are passed ? 
 
-  SELECT * FROM STUDENT WHERE  S1>=35 AND  S2>=35  AND S3>=35 ;
+     SELECT * FROM STUDENT WHERE  S1>=35 AND  S2>=35  AND S3>=35 ;
 
   list of students who are failed ?
 
-  SELECT * FROM STUDENT WHERE  S1<35  OR  S2<35   OR  S3<35 ;
+     SELECT * FROM STUDENT WHERE  S1<35  OR  S2<35   OR  S3<35 ;
 
  Testing :- 
 
@@ -825,23 +824,13 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
 => display employees working as clerk,manager and earning more than 5000 ?
 
-   SELECT * FROM emp WHERE job='clerk'  
-                                                       OR
-                                                       job='manager'
-                                                      AND
-                                                      sal>5000 ;
+   SELECT * FROM emp WHERE job='clerk' OR job='manager' AND sal>5000 ;
 
    above query returns clerk records earning 5000 because operator AND has
    got more priority then operator OR , so sal>5000 applied only to manager but
    not to clerk, to overcome this problem use  (   )
 
-    SELECT * FROM emp WHERE (
-                                                        job='clerk'  
-                                                        OR
-                                                        job='manager' 
-                                                        )
-                                                        AND
-                                                       sal>5000 ;
+    SELECT * FROM emp WHERE (job='clerk' OR job='manager') AND sal>5000 ;
 
  IN operator :- 
 --------------------
@@ -861,7 +850,8 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
   => employees not working for dept hr,sales ?
 
-     SELECT * FROM emp WHERE dname NOT IN ('hr','sales'); 
+      SELECT * FROM emp WHERE dname NOT IN ('hr','sales'); 
+
 
  BETWEEN operator :- 
  -----------------------------
@@ -878,22 +868,17 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
 => who are not joined in 2020 ?
 
-    SELECT * 
-    FROM emp 
-   WHERE doj NOT BETWEEN '01-JAN-2020' AND '31-DEC-2020' ;
+    SELECT * FROM emp WHERE doj NOT BETWEEN '01-JAN-2020' AND '31-DEC-2020' ;
 
  => employees working as clerk,manager and earning between 5000 and 10000
       and not joined in 2020 and not working for dept it,sales ?
 
-     SELECT *
-     FROM emp 
-    WHERE job IN ('clerk','manager')
-                  AND
-                  sal BETWEEN 5000 AND 10000
-                  AND
-                  doj NOT BETWEEN '01-JAN-2020' AND '31-DEC-2020'
-                  AND
-                  dname NOT IN ('it','sales') ;
+     SELECT * FROM emp 
+        WHERE job IN ('clerk','manager') 
+            AND sal BETWEEN 5000 AND 10000
+               AND doj NOT BETWEEN '01-JAN-2020' 
+                    AND '31-DEC-2020'
+                        AND dname NOT IN ('it','sales') ;
 
 => 
 
@@ -902,15 +887,10 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
  list of samsung,redmi,realme mobile phones price between 10000 and 20000 ?
 
- SELECT *
- FROM products
- WHERE  brand IN ('samsung','redmi','realme')
-                 AND
-                 price  BETWEEN 10000 AND 20000
-                 AND
-                 category='mobiles'  ; 
+ SELECT * FROM products 
+      WHERE  brand IN ('samsung','redmi','realme') 
+           AND price  BETWEEN 10000 AND 20000 category='mobiles'  ; 
 
- 30-aug-23
 
  LIKE operator :- 
  ---------------------
@@ -918,8 +898,8 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
  => use LIKE operator for pattern comparision
  
      ex :-  name starts with 's'
-              emailid ends with '.in'
-              job contains space
+               emailid ends with '.in'
+                  job contains space
 
         WHERE  COLNAME  LIKE  'PATTERN'
 
@@ -938,11 +918,11 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
  => employees name ends with 'd' ?
 
-     SELECT * FROM emp WHERE ename LIKE '%d' ;
+      SELECT * FROM emp WHERE ename LIKE '%d' ;
 
  => employees name contains 'a' ? 
 
-       SELECT * FROM emp WHERE ename LIKE  '%a%' ; 
+      SELECT * FROM emp WHERE ename LIKE  '%a%' ; 
 
  => where 'a' is the 3rd char in their name ?
 
@@ -950,21 +930,21 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
  => 'a' is the 3rd char from last ?
 
-     SELECT  *  FROM emp WHERE ename LIKE '%a__'  ;
+      SELECT  *  FROM emp WHERE ename LIKE '%a__'  ;
 
 => name contains 4 chars ? 
 
-     SELECT  *  FROM emp WHERE ename LIKE '____'  ; 
+      SELECT  *  FROM emp WHERE ename LIKE '____'  ; 
 
 => employees joined in JAN month ?      DD-MON-YY
 
-     SELECT * FROM emp WHERE doj LIKE '%JAN%' ; 
+      SELECT * FROM emp WHERE doj LIKE '%JAN%' ; 
  
 => employees joined in 2020 year ?
 
-   SELECT * FROM emp WHERE doj LIKE '%20' ; 
+      SELECT * FROM emp WHERE doj LIKE '%20' ; 
   
-    SELECT * FROM emp WHERE doj LIKE '_______20' ;
+      SELECT * FROM emp WHERE doj LIKE '_______20' ;
 
  Question 1  :- 
  --------------
