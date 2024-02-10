@@ -1,8 +1,8 @@
 case styles in programming:
-    1. camelCase
-    2. PascalCase
-    3. snake_case
-    4. kebab-case
+    1. camelCase    : shrutiBelekar   
+    2. PascalCase   : ShrutiBelekar
+    3. snake_case   : shruti_belekar
+    4. kebab-case   : shruti-belekar  
 
 Data types available in c lang and their format specifier:
     data type        size            format specifier
