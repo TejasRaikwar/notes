@@ -51,7 +51,7 @@ understanding java class:
 
 Object : 
      1) objects are created from a class
-     2) to create an object first we need to write new keyword, after that we need to initialize it iwth the help of a constructor, and constructor name will be same as class name
+     2) to create an object first we need to write new keyword, after that we need to initialize it with the help of a constructor, and constructor name will be same as class name
      3) We can create multiple objects of one class.
 
 Variables :
@@ -60,7 +60,7 @@ Variables :
 
 Naming Conventions of a java identifiers:
      1) The name should start with an alphabet or underscore (_).
-     2) A java identifier never starts with a number, But we can use any number combinations between 0 -9.
+     2) A java identifier never starts with a number, But we can use any number combinations between 0 - 9.
      3) Only "2" symbols allowed are, $ and _.
      4) There should not be any spaces between the identifier names.
      5) An identifier name should contain at least one character.
