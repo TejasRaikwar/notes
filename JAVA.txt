@@ -2,7 +2,7 @@ understanding java class:
      1) A java class is a idea of an object.
      2) java class : 
           a)pre-defined class:
-                    Every java predefined class always stats with a capital 	letter.[ex. String and System]
+                    Every java predefined class always stats with a capital letter.[ex. String and System]
           b)User Predefined classes :
                     Java user defined classes can starts with BOTH small letters & Capital letter.
      3)  basic questions :
@@ -102,9 +102,9 @@ Variables:
           }
 
      c) Local variables:
-          1) The variables which are declered inside a method or a block, or a constructor are known as local variables.
+          1) The variables which are declared inside a method or a block, or a constructor are known as local variables.
           2) We can access a local only with the help of its identifier name.
-          3) The scope of a local variable is only within the method. ( means we cant access a local variable outside the method.)
+          3) The scope of a local variable is only within the method. ( means we can`t access a local variable outside the method.)
           4) For local variable JVM will not assign any default values, it is the responsibility of the programmer to initialize them.
           5) ** If we are declaring a local variable and if we are not using it, then our programm will be executes normally, but if we are using a local varible without initialization we will be getting compile time error.
 
