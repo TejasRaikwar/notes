@@ -118,7 +118,7 @@ Constructor :
           
      Types of constructor: 
           a) Parameterized Constructor.
-          b) Non-Paarameterized Constructor.
+          b) Non-Parameterized Constructor.
 
      Que. When a constructor will be executed? or
           How to call a Java Constructor?
@@ -126,13 +126,14 @@ Constructor :
 
 
 
-     ->  default constructor is same like non Parameterized constructor
+     ->  default constructor is same like non-Parameterized constructor
           => default constructor => provided by the compiler.
           => non-Parameterized constructor => provided by the programmer
      -> can we declare constructor as private?
           => yes
      
      => IF WE DECLARE A CONSTRUCTOR AS PRIVATE THEN WE CAN RISTRICT OBJECT CREATION OF OUR CLASS IN OTHER CLASSES.
+     
      => CONSTRUCTOR OVERLOADING IS POSSIBLE,  OVERRIDING IS NOT POSSIBLE.
 
 
@@ -148,7 +149,7 @@ Operators:
 
      2) Arithmetic Operators
      3) Relational Operators
-     4) Logical Operators
+     4) Logical Operators :
 
 
 Control Statement : 
