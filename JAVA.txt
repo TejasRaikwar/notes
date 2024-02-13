@@ -1,3 +1,4 @@
+new line added
 understanding java class:
      1) A java class is a idea of an object.
      2) java class : 
