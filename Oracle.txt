@@ -858,15 +858,14 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
  IN operator :- 
 --------------------
-
  => use IN operator for  list comparision.
  => use IN operator for "=" comparision with multiple values.
 
          WHERE COLNAME  =  V1,V2,V3,---    => INVALID
          WHERE COLNAME  IN (V1,V2,V3,--)   => VALID
  
-        WHERE COLNAME <> V1,V2,V3,----    =>  INVALID
-        WHERE COLNAME NOT IN (V1,V2,V3,---)  => VALID
+         WHERE COLNAME <> V1,V2,V3,----    =>  INVALID
+         WHERE COLNAME NOT IN (V1,V2,V3,---)  => VALID
 
  => employees whose id = 100,103,105  ? 
 
