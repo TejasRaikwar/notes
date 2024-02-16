@@ -821,7 +821,7 @@ WHERE clause :-
 
    STUDENT
    SNO   SNAME  S1   S2    S3
-    1      A    80    90   70
+    1      A    80   90    70
     2      B    30   60    50
 
   list of students who are passed ? 
