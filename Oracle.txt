@@ -841,7 +841,7 @@ WHERE clause :-
       S1  NUMBER(3),
       S2  NUMBER(3),
       S3  NUMBER(3)
-   );
+     );
 
 SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
