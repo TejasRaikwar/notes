@@ -801,7 +801,7 @@ WHERE clause :-
 
  => employees working for sales dept and earning more than 5000 ?
 
-    SELECT * FROM emp WHERE dname='sales' AND sal>5000; 
+     SELECT * FROM emp WHERE dname='sales' AND sal>5000; 
     
 29-AUG-23
 
