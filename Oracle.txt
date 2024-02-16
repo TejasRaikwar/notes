@@ -970,7 +970,7 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
  Question 1  :- 
  --------------
-
+ 
   SELECT *  
   FROM emp 
   WHERE job IN ('clerk','man%') ;
