@@ -811,11 +811,11 @@ WHERE clause :-
 
 => employees earning more than 5000 and less than 10000 ?
 
-    SELECT * FROM emp WHERE sal > 5000    AND      sal < 10000 ; 
+    SELECT * FROM emp WHERE sal > 5000 AND sal < 10000 ; 
        
  => employees joined in 2020 year ?
 
-     SELECT * FROM emp WHERE doj >= '01-JAN-2020'   AND  doj <= '31-DEC-2020' ;
+     SELECT * FROM emp WHERE doj >= '01-JAN-2020' AND  doj <= '31-DEC-2020' ;
 
 => 
 
