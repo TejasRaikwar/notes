@@ -834,7 +834,7 @@ WHERE clause :-
 
  Testing :- 
 
- SQL>CREATE TABLE STUDENT
+ SQL> CREATE TABLE STUDENT
      (
       SID NUMBER(2),
       SNAME VARCHAR2(10),
