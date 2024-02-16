@@ -871,7 +871,7 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
       SELECT * FROM emp WHERE empid IN (100,103,105) ;
 
-  => employees not working for dept hr,sales ?
+ => employees not working for dept hr,sales ?
 
      SELECT * FROM emp WHERE dname NOT IN ('hr','sales'); 
 
