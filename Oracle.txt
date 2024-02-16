@@ -888,11 +888,9 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
      SELECT * FROM emp WHERE  sal BETWEEN 5000 AND 10000 ; 
 
-=> who are not joined in 2020 ?
+ => who are not joined in 2020 ?
 
-    SELECT * 
-    FROM emp 
-   WHERE doj NOT BETWEEN '01-JAN-2020' AND '31-DEC-2020' ;
+    SELECT * FROM emp WHERE doj NOT BETWEEN '01-JAN-2020' AND '31-DEC-2020' ;
 
  => employees working as clerk,manager and earning between 5000 and 10000
       and not joined in 2020 and not working for dept it,sales ?
