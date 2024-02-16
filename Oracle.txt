@@ -713,9 +713,9 @@ Displaying Data :-
 
  syn :-  SELECT  columns / *    FROM  tabname ; 
 
-           sql     =    english 
+           sql     =  english 
            queries =  sentences
-           clauses =   words
+           clauses =  words
 
 => display all the data from emp table ?
 
