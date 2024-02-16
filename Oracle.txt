@@ -746,7 +746,7 @@ WHERE clause :-
   => op must be any relational operator like >  >=  <   <=   =   <> 
   => if cond = true row is selected , if false row is not selected
  
- => display employee details whose id = 103 ?
+  => display employee details whose id = 103 ?
 
       SELECT * FROM emp WHERE empid = 103 ; 
  
@@ -754,7 +754,7 @@ WHERE clause :-
 
      SELECT * FROM emp WHERE ename = 'kumar' ;
 
-=> employees earning more than 5000 ?
+  => employees earning more than 5000 ?
 
     SELECT * FROM emp WHERE sal > 5000;
 
