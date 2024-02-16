@@ -811,7 +811,7 @@ WHERE clause :-
 
 => employees earning more than 5000 and less than 10000 ?
 
-    SELECT * FROM emp WHERE sal > 5000 AND sal < 10000 ; 
+     SELECT * FROM emp WHERE sal > 5000 AND sal < 10000 ; 
        
  => employees joined in 2020 year ?
 
@@ -821,16 +821,16 @@ WHERE clause :-
 
    STUDENT
    SNO   SNAME  S1   S2    S3
-   1        A             80    90    70
-   2       B              30   60    50
+    1      A    80    90   70
+    2      B    30   60    50
 
   list of students who are passed ? 
 
-  SELECT * FROM STUDENT WHERE  S1>=35 AND  S2>=35  AND S3>=35 ;
+     SELECT * FROM STUDENT WHERE  S1>=35 AND  S2>=35  AND S3>=35 ;
 
   list of students who are failed ?
 
-  SELECT * FROM STUDENT WHERE  S1<35  OR  S2<35   OR  S3<35 ;
+     SELECT * FROM STUDENT WHERE  S1<35  OR  S2<35   OR  S3<35 ;
 
  Testing :- 
 
@@ -848,23 +848,13 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
 
 => display employees working as clerk,manager and earning more than 5000 ?
 
-   SELECT * FROM emp WHERE job='clerk'  
-                                                       OR
-                                                       job='manager'
-                                                      AND
-                                                      sal>5000 ;
+   SELECT * FROM emp WHERE job='clerk' OR job='manager' AND sal>5000 ;
 
    above query returns clerk records earning 5000 because operator AND has
    got more priority then operator OR , so sal>5000 applied only to manager but
    not to clerk, to overcome this problem use  (   )
 
-    SELECT * FROM emp WHERE (
-                                                        job='clerk'  
-                                                        OR
-                                                        job='manager' 
-                                                        )
-                                                        AND
-                                                       sal>5000 ;
+    SELECT * FROM emp WHERE ( job='clerk' OR job='manager') AND sal>5000 ;
 
  IN operator :- 
 --------------------
@@ -872,7 +862,7 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
  => use IN operator for  list comparision.
  => use IN operator for "=" comparision with multiple values.
 
-         WHERE COLNAME  =  V1,V2,V3,---     =>   INVALID
+         WHERE COLNAME  =  V1,V2,V3,---    => INVALID
          WHERE COLNAME  IN (V1,V2,V3,--)   => VALID
  
         WHERE COLNAME <> V1,V2,V3,----    =>  INVALID
