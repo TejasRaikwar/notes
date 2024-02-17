@@ -1059,7 +1059,6 @@ IS operator :-
 
   ALIAS :-  
  -------------
-
  => alias means another name or alternative name.
  => used to change column heading.
  
@@ -1067,16 +1066,13 @@ IS operator :-
 
   => display   ENAME   ANNUAL SAL  ?
 
-      SELECT ENAME,SAL*12 AS ANNSAL
-      FROM EMP ; 
+      SELECT ENAME,SAL*12 AS ANNSAL FROM EMP ; 
 
-      SELECT ENAME,SAL*12 AS  "ANNUAL SAL"
-      FROM EMP ; 
+      SELECT ENAME,SAL*12 AS  "ANNUAL SAL" FROM EMP ; 
 
  => display ENAME  EXPERIENCE in years ? 
 
-     SELECT ENAME,	ROUND((SYSDATE - doj)/365) AS EXPERIENCE 
-     FROM EMP ; 
+     SELECT ENAME,	ROUND((SYSDATE - doj)/365) AS EXPERIENCE FROM EMP ; 
 
  => employees having more than 3 years of expr ? 
 
