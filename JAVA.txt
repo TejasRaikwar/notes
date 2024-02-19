@@ -197,14 +197,14 @@ TypeCasting :
           data type <== class Object(wrapper)  :: auto-Un_boxing 
                vice-versa 
            
-          Why to convert :   to store data into conllections : conllections does not allow premitive data types.  they allows only Objects.
+          Why to convert :   to store data into conllections : collections does not allow premitive data types.  they allows only Objects.
    
           - Wrapper Classes : 
               - In java technology if we want to represent, a group of objects in the form of an object then we have to use "Collection Framework", 
               - But collection will not allow datatypes, they allows only objects.
               - If we want to store premitive datatypes in collection objects, first we need to convert the premitive data into object form and then store it in the collection objects.
               - For 8 premitive data types there are 8 wrapper classes.
-              - *** Java wrapper classes are a set of pre-defined classes which are prsent in java.lang package that provides an object representation for each of the 8 premitive data types.
+              - *** Java wrapper classes are a set of pre-defined classes which are present in java.lang package that provides an object representation for each of the 8 premitive data types.
 
           - Array : Array collects multiple elements of similar datatypes in a contineous block of memory.
             ex :   
@@ -264,11 +264,9 @@ TypeCasting :
           - Allmost all wrapper classes define two constructors, one can take res premitive data types as a parameter and other can take string as a parameter (except Character)
           - Character wrapper class defines only one constructor which can take char premitive data type as a parameter. It will not accept strings.
           - If we are passing string as parameter in boolean wrapper class then:
-               a) If the argument is true then the result also will be true irrespective of the data ans case sensitiveness.
-               b) If the argument is false then the result also will be false irrespective of the data ans case sensitiveness.
-               c) Other than true/false any other will give you the resutlt as false.
-
-
+               a) If the argument is true then the result also will be true irrespective of the data and case sensitiveness.
+               b) If the argument is false then the result also will be false irrespective of the data and case sensitiveness.
+               c) Other than true/false any other will give you the result as false.
 
 
  - Scanner class is present in java.util package, if we want to use Scanner class object.
