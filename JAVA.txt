@@ -787,6 +787,7 @@ Abstraction :
                           interface - implements -> class
                           interface - extends -> interface
                           class -> interface   => Invalid
+               
                11) If we are inheriting an interface into a class 100% in the child class we need to provide implemention (by using Method overridding ) for the all abstract methods which are present in the interface, otherwise we will be getting an compile time error.
                12) Ifn we dont want to provide implemention for all the abstract methods present in the interface  then we need to make our child class also as abstract.
 
