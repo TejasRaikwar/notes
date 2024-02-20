@@ -828,7 +828,7 @@ Abstraction :
                 }
 
 
-                public class ClassA extends ClassB implements InterfaceA,InterfaceA{
+                public class ClassA extends ClassB implements InterfaceA,InterfaceB{
                     public void meth1(){
                          System.out.println("interfaceA abstract method overridden");
                     }
@@ -845,7 +845,7 @@ Abstraction :
                          aobj.meth1();
                          System.out.println(aobj.msg(500));
                          aobj.meth2();
-                         aobj.meth4();  // C.E. because of private access modifier
+                     //  aobj.meth4();  // C.E. because of private access modifier
                          System.out.println("----------------------------------------");
                          InterfaceB bobj = new ClassA();
                          bobj2.display();
@@ -998,8 +998,8 @@ Exception handling:
           1) We can handle an exception by using try, catch, finally blocks.
           2) Whenever we are using all three blocks we should use 100% maintain the order.
           3) Inside the try block always we need to write minimum code.[ Write only suspecious code inside the try block.]
-          4) if there is an exception occured in the try block the immediately the compiler will be coming to to its respective catch block block. Remaining code which is present inside the try block not be executed.
-          5) A catch block will be executed only if there is an exception occured in the try block and we are catching that respective 
+          4) if there is an exception occured in the try block the immediately the compiler will be coming to its respective catch block. Remaining code which is present inside the try block not be executed.
+          5) A catch block will be executed only if there is an exception occured in the try block and we are catching that respective.
           6) If we are catching the parent exception of all the exception classes i.e.[Exception] then every Exception will be handled.
           7) A single try block never exists.
           8) try block should be followed with either catch block (or) finally block (or) both.
@@ -1017,7 +1017,7 @@ Exception handling:
           15) Whenever we are using multiple catch blocks always parent exception should be handled in the last catch block.
           16) If we are using multiple catch blocks duplicate exception handling is not allowed.[ we will be getting an compile time error.]
           17) From java 1.7v onwords we can write a single try block also.
-          18) from java 1.7v onwords we can handle multiple exceptions by using a single catch block. But those exce[tions should not have any parent child relationship.
+          18) from java 1.7v onwords we can handle multiple exceptions by using a single catch block. But those excetions should not have any parent child relationship.
 
           public class ClassA{
                void meth1(){
