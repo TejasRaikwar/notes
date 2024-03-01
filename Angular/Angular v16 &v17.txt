@@ -1,0 +1,197 @@
+                                Angular v16 &v17
+                             =====================
+Why angular 16?
+Angular is a frontend Framework.Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps(SPA's)- SPA means page will not reload
+
+What is scope of Angular in present market?
+In present market Angular stays second after react but still Angular is more stable than React.
+JQuery is mostly used before angular nd react.
+
+History of Angular:
+Angular is developed and maintained by Google.
+In 2010, Google developed a frontEnd Framework called Angular JS which is based on Javascript, but it can't be used as wide because of its complexity. In 2012, Google signed agrement with Microsoft and brought Angular with TypeSscript, then they name it as Angular or Angular+ or Angular 2 which is based on TS.
+
+Recent versions of Angular: Nov 8,2023 version 17
+Every Version Angular will add some features.
+In Companies, mostly Angular 9, Angular 13 or Angular 15 only will be there.
+
+what are the differences between angular and React?
+FrameWorks consists files,routing,forms,ui etc..,Developer World.
+Library means just a predefined logic/code for specific Purpose
+                               Angular                               React
+===================================================
+        Angular is a FrontEnd Framework       React is just a UI Library
+       Less dependency with other libraries    mostly dependent with other libraries
+         Angular is built and support with TS   React goes with JS or TS
+         Angular is developed by Google          React is developed by Facebook
+                                                                       framework of react like NextJS
+
+====================================================
+For this Course:
+Prerequisites:
+HTML,CSS and JS(datatypes,functions,controls,api's,DOM)
+all frontend technologies mostly client side.
+
+Couse Duration: 45-50 sessions,
+Each Day: 7.40-8.50/9
+After every session will be given an assignment and most of the concepts will be explained with real time projects.
+1. JS Revision & Typescript -10 Sessions(max),
+2. Angular Basics(Architecture)
+3. Components,Modules,Directives,Controls
+4. API's,CRUD
+5.PIPES, Real time Projects
+6.Advanced Angular(firabased ,JWT etc..,)
+7. Styling(Material,bootstrap,tailwind)
+8. Forms, Routing etc..,
+9. Projects(Dashboard with role based authentication, Portfolio, E commerce)
+10. Angular 17 and other versions
+11. Interview Questions
+(35-40 sessions)
+
+
+
+
+
+JAVASCRIPT
+==========
+Just in time(JIT) compiler which is used to give functionalities to web pages
+
+Static data typing,java,.net
+JS is dynamic data typing
+Java:
+ int a=10;
+a="raj";wrong
+
+JS:
+let a=10;
+a="raj"
+a=true
+/* primitive number,string,boolean,null,undefined, non-primitive array,functions,objects,sets,maps,date*/
+
+for example, e-commerce , u will have so many values from backend, if by mistake backend sends price as a string
+
+if i add type checking to javascript, it is called typescript
+
+
+Today's task is find differences betweeen let,var and const in JS
+
+To do this course,
+
+VS Code- code editor
+https://code.visualstudio.com/download
+Download and install
+
+Create a dummy folder and start basic html and js for practise,connect html and js
+
+shortcut for html template is ! + enter
+
+Extensions: need to install entensions Live Server
+
+Assignment : learn what is hoisting and how js works?
+
+what is typeScript?
+Typescript is a superset of JS.TypeScript is used to provide type check to javascript
+https://www.typescriptlang.org/
+
+is js compiles or not?
+JS interpreted in browser. line by line 
+JS Uses OOP concepts but not pure OOP
+
+How to start TypeScript?
+  step 1: go to https://nodejs.org/en and download and install nodejs
+step 2: check node js installed properly or not by opening command prompt and enter the command node -v
+
+step 3: After checking that npm is installed, go to command propmt and type "npm install -g typescript"
+
+step 4: to check whether typescript installed properly or not, type "tsc -v".
+
+what is npm?
+node package manager . In internet there will be thousands of packages/libraries.npm can install any package you need or uninstall any package you want . Alternatives are yarn,PIP or pnpm
+
+For Angular ,TS Mandatory
+to install ts, first install npm
+
+Typescript cannot be understand by browser. typescript compiler will conver tyescript into javascript
+
+Package.json:==> Any project , npm mainly check package.json, package.json contains meta data,mostly dependencies packages will be used
+
+For example, If i used bootstrap in my project, then package.json will note down that you used bootstrap with its version
+command: npm init -y
+
+Package-lock.json==> it provides meta data of package.json
+
+node modules===> it is folder where your package will be downloaded
+
+To create tsconfig.json, command is  npx tsc --init 
+config files means set of rules.
+same way, tsconfig means set of rules of typescript compiler
+
+
+
+
+Features:
+Static Data Typing:- it means you can declare the types of variables,function parameters or function return types. Typescript system will understand the data type and will catch error
+
+IDESupport: it provide support for all code editors and IDEs
+
+Type Inference: it means typescript has the capability to recognize the type without declaring data type
+
+Rich EcoSystem: it has growing Ecosystem and many tools were supporting it
+
+Tyoescript check errors in compile time
+
+
+
+
+
+tsc will compile typescript code and convert into js
+actual procedure in any application is , first we will install package, npm install package-name after that u will use it. in case u want to use package but without installing it then u will give npx 
+
+
+commands:
+create ts file and write some basic js and in terminal give command "npx tsc --init" in specified path
+next, in terminal , give command " npx tsc filename"
+
+Typescript follows type annotations(u will give type) and type inference(it will only guess the type)
+let a:number=10======>type annotation
+let b=10===> type inference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
