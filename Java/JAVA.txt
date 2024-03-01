@@ -435,7 +435,6 @@ UnderStanding "this" keyword :
 
 
                  Output:   
-                     default constructor called.
                      Parameterized constructor called.
                      Hi
 
@@ -460,19 +459,19 @@ String :
 
 difference between String , StringBuffer and StringBuilder:
      String :    
-     - Immutable 
-     - equals() -> Contents
+          - Immutable 
+          - equals() -> Contents
 
      StringBuffer:
-     - default capacity of StringBuffer is 16characters.
-     - Mutable
-     - equals() -> Address Loc`s
-     - synchronized
+          - default capacity of StringBuffer is 16 characters.
+          - Mutable
+          - equals() -> Address Loc`s
+          - synchronized
 
      StringBuilder:
-     - Mutable
-     - equals() -> 
-     - synchronized
+          - Mutable
+          - equals() -> 
+          - synchronized
 
   Que: when we need to use String, StringBuffer, StringBuilder
 
