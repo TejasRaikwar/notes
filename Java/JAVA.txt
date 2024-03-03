@@ -707,7 +707,7 @@ Abstraction :
                     4) implemention for an abstract method should be given in the next class by using method overriding concept
                       
 
-          1)  A class which is declared as abstract with abstract with abstract keyword is known as abstract method.
+          1) A class which is declared as abstract with abstract with abstract keyword is known as abstract method.
           2) inside an asbtract class we can write both normal methods and abstract methods.
           3) It is not mandatory to write at least one abstract method inside an abstract Class
           4) Writing abstract method inside an abstract class is always optional
@@ -778,7 +778,7 @@ Abstraction :
                5) From java 1.8v onwords write default methods inside an Interface.
                6) From java 1.8v onwords write statics methods also inside an interface including main method.
                7) From java 1.9v onwords we can write private methods also inside an interface.
-               8) Inside an interface we cannot write constructors because intterface is not a class.
+               8) Inside an interface we cannot write constructors because interface is not a class.
                9) Just like a abstract class "we cannot instantiate an interface, means we can not create object for interface
                10) If we want to inherit an interface into a class we need to use the keyword implements.
 
@@ -795,7 +795,7 @@ Abstraction :
           Ex. : 
                 public interface InterfaceA{
                     void meth1();
-                    String msg(inx);
+                    String msg(int);
 
                     default void meth2(){    // java 1.8v
                          System.out.println("default method of IntrfaceA");
