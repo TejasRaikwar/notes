@@ -963,7 +963,7 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
  
 => employees joined in 2020 year ?
 
-   SELECT * FROM emp WHERE doj LIKE '%20' ; 
+    SELECT * FROM emp WHERE doj LIKE '%20' ; 
   
     SELECT * FROM emp WHERE doj LIKE '_______20' ;
 
