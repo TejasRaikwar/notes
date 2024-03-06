@@ -970,14 +970,12 @@ SQL> INSERT INTO STUDENT VALUES(&SID,&SNAME,&S1,&S2,&S3);
  Question 1  :- 
  --------------
  
-  SELECT *  
-  FROM emp 
-  WHERE job IN ('clerk','man%') ;
+  SELECT * FROM emp WHERE job IN ('clerk','man%') ;
 
-A  ERROR
-B  returns clerk,manager rows
-C  returns only clerk rows
-D  none
+     A  ERROR
+     B  returns clerk,manager rows
+     C  returns only clerk rows
+     D  none
 
   ANS :-  C      =>   %man  is not treated as pattern because operator is IN
 
@@ -988,9 +986,7 @@ D  none
 Question 2 :- 
 -------------------
 
-  SELECT *
-  FROM emp 
-  WHERE sal BETWEEN 10000 AND 5000 ; 
+  SELECT * FROM emp WHERE sal BETWEEN 10000 AND 5000 ; 
 
  A  ERROR
  B RETURNS ROWS
@@ -1018,8 +1014,7 @@ Question 2 :-
 
    SELECT * FROM cust WHERE cname LIKE  '%_%' 
 
-   above query returns all customer records because "_" is treated as wildcard char 
-   but not treated as normal char , to overcome this problem use ESCAPE.
+   above query returns all customer records because "_" is treated as wildcard char but not treated as normal char, to overcome this problem use ESCAPE.
 
    SELECT * FROM cust WHERE cname LIKE  '%\_%'  ESCAPE '\' ;
 
@@ -1063,7 +1058,7 @@ IS operator :-
  
        COLNAME /  EXPR   [AS]   ALIAS 
 
-  => display   ENAME   ANNUAL SAL  ?
+ => display   ENAME   ANNUAL SAL  ?
 
       SELECT ENAME,SAL*12 AS ANNSAL FROM EMP ; 
 
@@ -1099,14 +1094,13 @@ IS operator :-
                       SAL + (SAL*0.3) + (SAL*0.2) - (SAL*0.1) AS TOTSAL
       FROM EMP ; 
 
-           
+            
     SACHIN	5000	1500	1000	500	7000
  
  ORDER BY :- 
  -------------------
 
- => used to sort table data based on one or more columns either in ascending or
-      descending.
+ => used to sort table data based on one or more columns either in ascending or descending.
 
       SELECT columns
       FROM tabname
@@ -1123,17 +1117,14 @@ IS operator :-
 
   => arrange employee list sal wise desc ? 
 
-       SELECT *
-       FROM emp
-       ORDER BY sal DESC ; 
+       SELECT * FROM emp ORDER BY sal DESC ; 
 
        1	A	3000		2	B	6000
        2	B	6000  =========> 	3	C	5000
        3	C	5000		4	D	4000
        4	D	4000		1	A	3000
 
- 01-sep-23
-
+ 
  => arrange employee list dept wise asc and with in dept sal wise desc ?
 
      SELECT empno,ename,sal,deptno
@@ -1149,19 +1140,17 @@ IS operator :-
 
 => arrange employee list dept wise asc and with in dept hiredate wise asc ?
 
-    SELECT empno,ename,hiredate,deptno 
-    FROM emp 
-    ORDER BY deptno ASC,hiredate ASC ; 
+    SELECT empno,ename,hiredate,deptno FROM emp ORDER BY deptno ASC, hiredate ASC ; 
 
 scenario :- 
 --------------
 
  STUDENT
  SNO	SNAME	M	P	C
- 1	A	80	90	70
- 2	B	60	70	50
- 3	C	90	80	70
- 4	D	90	70	80
+ 1	  A	     80	90	70
+ 2	  B	     60	70	50
+ 3	  C	     90	80	70
+ 4	  D	     90	70	80
 
 => arrange student list avg wise desc ,  m desc,p desc  ?
 
@@ -1193,7 +1182,7 @@ FROM emp :-
 -----------------
  
 1	A	CLERK		3000
-2	B	MANAGER	6000
+2	B	MANAGER	     6000
 3	C	ANALYST		5000
 4	D	CLERK		5000
 
@@ -1201,7 +1190,7 @@ WHERE :-
 ---------------
 
 1	A	CLERK		3000
-2	B	MANAGER	6000
+2	B	MANAGER	     6000
 4	D	CLERK		5000
 
 
