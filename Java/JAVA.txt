@@ -795,7 +795,7 @@ Abstraction :
           Ex. : 
                 public interface InterfaceA{
                     void meth1();
-                    String msg(int);
+                    String msg(int x);
 
                     default void meth2(){    // java 1.8v
                          System.out.println("default method of IntrfaceA");
