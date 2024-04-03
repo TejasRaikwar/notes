@@ -50,9 +50,6 @@ Rule 5: The comprehensive data SubLanguage rule :
          5. authorization
          6. transaction boundaries(begin, commit and rollback)
 
-
-
-
 Rule 6: The view updating rule:
      all the view that are theoretically updatable are also updatable by the system.
 
