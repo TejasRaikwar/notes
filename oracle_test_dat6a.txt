@@ -1,0 +1,117 @@
+Install sample data set "Customer Orders"
+================================================================================
+CREATE OBJECTS
+- table co_customers
+- table co_inventory
+- table co_order_items
+- table co_orders
+- table co_products
+- table co_shipments
+- table co_stores
+- 1 index (fk indexes are created later automatically)
+- view co_customer_order_products
+- view co_product_orders
+- view co_product_reviews
+- view co_store_orders_status
+- view co_store_orders
+CREATE MISSING FOREIGN KEYS
+- for tables prefixed with 'CO'
+- alter table CO_INVENTORY modify PRODUCT_ID references CO_PRODUCTS disable
+- alter table CO_INVENTORY modify STORE_ID references CO_STORES disable
+- alter table CO_ORDERS modify CUSTOMER_ID references CO_CUSTOMERS disable
+- alter table CO_ORDERS modify STORE_ID references CO_STORES disable
+- alter table CO_ORDER_ITEMS modify ORDER_ID references CO_ORDERS disable
+- alter table CO_ORDER_ITEMS modify PRODUCT_ID references CO_PRODUCTS disable
+- alter table CO_ORDER_ITEMS modify SHIPMENT_ID references CO_SHIPMENTS disable
+- alter table CO_SHIPMENTS modify CUSTOMER_ID references CO_CUSTOMERS disable
+- alter table CO_SHIPMENTS modify STORE_ID references CO_STORES disable
+- 9 foreign keys created
+CREATE MISSING FOREIGN KEY INDEXES
+- for tables prefixed with 'CO'
+- create index CO_ORDERS_C3_FK_IX on CO_ORDERS (CUSTOMER_ID)
+- create index CO_ORDERS_C5_FK_IX on CO_ORDERS (STORE_ID)
+- create index CO_INVENTORY_C3_FK_IX on CO_INVENTORY (PRODUCT_ID)
+- create index CO_SHIPMENTS_C3_FK_IX on CO_SHIPMENTS (CUSTOMER_ID)
+- create index CO_SHIPMENTS_C2_FK_IX on CO_SHIPMENTS (STORE_ID)
+- create index CO_ORDER_ITEMS_C6_FK_IX on CO_ORDER_ITEMS (SHIPMENT_ID)
+- 6 indexes created
+UNIFY INDEX NAMES
+- for tables prefixed with 'CO'
+- alter index SYS_C008320 rename to CO_CUSTOMERS_C1_PK_IX
+- alter index SYS_C008321 rename to CO_CUSTOMERS_C2_UK_IX
+- alter index CO_CUSTOMERS_NAME_IX rename to CO_CUSTOMERS_C3_IX
+- alter index SYS_C008326 rename to CO_INVENTORY_C1_PK_IX
+- alter index SYS_C008327 rename to CO_INVENTORY_C2_C3_UK_IX
+- alter index SYS_C008339 rename to CO_ORDERS_C1_PK_IX
+- alter index SYS_C008331 rename to CO_ORDER_ITEMS_C1_C2_PK_IX
+- alter index SYS_C008332 rename to CO_ORDER_ITEMS_C3_C1_UK_IX
+- alter index SYS_C008343 rename to CO_PRODUCTS_C1_PK_IX
+- alter index SYS_C008350 rename to CO_SHIPMENTS_C1_PK_IX
+- alter index SYS_C008354 rename to CO_STORES_C1_PK_IX
+- alter index SYS_C008355 rename to CO_STORES_C2_UK_IX
+- 12 indexes renamed
+UNIFY CONSTRAINT NAMES
+- for tables prefixed with 'CO'
+- alter table CO_CUSTOMERS rename constraint SYS_C008317 to CO_CUSTOMERS_C1_NN
+- alter table CO_CUSTOMERS rename constraint SYS_C008320 to CO_CUSTOMERS_C1_PK
+- alter table CO_CUSTOMERS rename constraint SYS_C008318 to CO_CUSTOMERS_C2_NN
+- alter table CO_CUSTOMERS rename constraint SYS_C008321 to CO_CUSTOMERS_C2_UK
+- alter table CO_CUSTOMERS rename constraint SYS_C008319 to CO_CUSTOMERS_C3_NN
+- alter table CO_INVENTORY rename constraint SYS_C008322 to CO_INVENTORY_C1_NN
+- alter table CO_INVENTORY rename constraint SYS_C008326 to CO_INVENTORY_C1_PK
+- alter table CO_INVENTORY rename constraint SYS_C008327 to CO_INVENTORY_C2_C3_UK
+- alter table CO_INVENTORY rename constraint SYS_C008357 to CO_INVENTORY_C2_FK
+- alter table CO_INVENTORY rename constraint SYS_C008323 to CO_INVENTORY_C2_NN
+- alter table CO_INVENTORY rename constraint SYS_C008356 to CO_INVENTORY_C3_FK
+- alter table CO_INVENTORY rename constraint SYS_C008324 to CO_INVENTORY_C3_NN
+- alter table CO_INVENTORY rename constraint SYS_C008325 to CO_INVENTORY_C4_NN
+- alter table CO_ORDERS rename constraint SYS_C008333 to CO_ORDERS_C1_NN
+- alter table CO_ORDERS rename constraint SYS_C008339 to CO_ORDERS_C1_PK
+- alter table CO_ORDERS rename constraint SYS_C008334 to CO_ORDERS_C2_NN
+- alter table CO_ORDERS rename constraint SYS_C008358 to CO_ORDERS_C3_FK
+- alter table CO_ORDERS rename constraint SYS_C008335 to CO_ORDERS_C3_NN
+- alter table CO_ORDERS rename constraint SYS_C008338 to CO_ORDERS_C4_CK
+- alter table CO_ORDERS rename constraint SYS_C008336 to CO_ORDERS_C4_NN
+- alter table CO_ORDERS rename constraint SYS_C008359 to CO_ORDERS_C5_FK
+- alter table CO_ORDERS rename constraint SYS_C008337 to CO_ORDERS_C5_NN
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008331 to CO_ORDER_ITEMS_C1_C2_PK
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008360 to CO_ORDER_ITEMS_C1_FK
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008332 to CO_ORDER_ITEMS_C3_C1_UK
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008361 to CO_ORDER_ITEMS_C3_FK
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008328 to CO_ORDER_ITEMS_C3_NN
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008329 to CO_ORDER_ITEMS_C4_NN
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008330 to CO_ORDER_ITEMS_C5_NN
+- alter table CO_ORDER_ITEMS rename constraint SYS_C008362 to CO_ORDER_ITEMS_C6_FK
+- alter table CO_PRODUCTS rename constraint SYS_C008340 to CO_PRODUCTS_C1_NN
+- alter table CO_PRODUCTS rename constraint SYS_C008343 to CO_PRODUCTS_C1_PK
+- alter table CO_PRODUCTS rename constraint SYS_C008341 to CO_PRODUCTS_C2_NN
+- alter table CO_PRODUCTS rename constraint SYS_C008342 to CO_PRODUCTS_C4_CK
+- alter table CO_SHIPMENTS rename constraint SYS_C008344 to CO_SHIPMENTS_C1_NN
+- alter table CO_SHIPMENTS rename constraint SYS_C008350 to CO_SHIPMENTS_C1_PK
+- alter table CO_SHIPMENTS rename constraint SYS_C008364 to CO_SHIPMENTS_C2_FK
+- alter table CO_SHIPMENTS rename constraint SYS_C008345 to CO_SHIPMENTS_C2_NN
+- alter table CO_SHIPMENTS rename constraint SYS_C008363 to CO_SHIPMENTS_C3_FK
+- alter table CO_SHIPMENTS rename constraint SYS_C008346 to CO_SHIPMENTS_C3_NN
+- alter table CO_SHIPMENTS rename constraint SYS_C008347 to CO_SHIPMENTS_C4_NN
+- alter table CO_SHIPMENTS rename constraint SYS_C008349 to CO_SHIPMENTS_C5_CK
+- alter table CO_SHIPMENTS rename constraint SYS_C008348 to CO_SHIPMENTS_C5_NN
+- alter table CO_STORES rename constraint SYS_C008351 to CO_STORES_C1_NN
+- alter table CO_STORES rename constraint SYS_C008354 to CO_STORES_C1_PK
+- alter table CO_STORES rename constraint SYS_C008352 to CO_STORES_C2_NN
+- alter table CO_STORES rename constraint SYS_C008355 to CO_STORES_C2_UK
+- alter table CO_STORES rename constraint SYS_C008353 to CO_STORES_C3_C4_CK
+- 48 constraints renamed
+LOAD DATA
+- insert  392 rows into CO_CUSTOMERS
+- insert  566 rows into CO_INVENTORY
+- insert 3914 rows into CO_ORDER_ITEMS
+- insert 1950 rows into CO_ORDERS
+- insert   46 rows into CO_PRODUCTS
+begin
+*
+ERROR at line 1:
+ORA-01489: result of string concatenation is too long
+ORA-06512: at line 2
+
+
+Disconnected from Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
