@@ -1,0 +1,6 @@
+1. Entity : 
+        The entities are the persistence objects stores as a record in the database.
+2. Repository : 
+        In Spring Boot, a repository is typically used to interact with a database or other persistent data store. 
+3. Controller :
+
