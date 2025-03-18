@@ -1,0 +1,113 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+class Employee{
+	public:
+	int eid;
+	string name;
+	string address;
+	double salary;
+	public:
+	void Accept(){
+		cout<<"Enter the eid:"<<endl;
+		cin>>eid;
+	        cout<<"Enter the name:"<<endl;
+		cin>>name;
+		cout<<"Enter the addresss:"<<endl;
+		cin>>address;
+		cout<<"Enter the salary:"<<endl;\
+	      cin>>salary;
+
+	}
+	void Display(){
+	cout<<"Employee id:"<<eid;
+	cout<<" Name :"<<name;
+	cout<<" Address :"<<address;
+	cout<<" Salary:"<<salary<<endl;
+	}
+      
+
+};
+
+int main(){
+	vector<Employee> emp;
+	int n=1;
+	while(n!=0){
+	cout<<"Enter your choice \n1.Add Employee\n2.Display All Employees \n3.Search an Employee\n4.Delete an Employee\n5.Modify an Employee\n0.Exit App"<<endl;
+	cin>>n;
+	switch(n){
+		case 1:{
+		       Employee e;
+
+		       e.Accept();
+
+		       emp.push_back(e);
+		       break;
+
+		       }
+		case 2:{
+			vector<Employee>::iterator it=emp.begin();
+			while(it!=emp.end()){
+				it->Display();
+				it++;
+		       }
+			break;
+		       }
+		case 3:{
+			
+			int id;
+			cin>>id;
+
+			for(auto &e:emp){  
+				if(e.eid==id){
+				e.Display();
+				}
+			
+			}
+			break;
+			     
+		       }
+		 case 4:{	
+			int id;
+			cin>>id;		
+			vector<Employee>::iterator it=emp.begin();
+			while(it!=emp.end()){
+				if(it->eid==id){
+				 emp.erase(it);
+				}
+
+				it++;
+		       }
+
+			break;
+			}
+		case 5:{
+			int id;
+			cin>>id;
+
+			for(auto &e:emp){
+				if(e.eid==id){
+					e.Accept();
+					cout<<"Values ";
+				e.Display();
+				}
+			
+			}
+
+
+		       break;
+		       }
+	
+	
+						
+	}
+	
+	
+	
+	
+	
+	}
+
+
+}
