@@ -307,12 +307,12 @@ EMPID   ENAME      SAL         DATA DEFINITION
 
   => to connect to oracle open sqlplus 
 
-     USERNAME   :-  SYSTEM
-     PASSWORD  :-  TIGER
+     USERNAME   :-  <username>
+     PASSWORD  :-  <password>
 
     OR
 
-     USERNAME  :-   SYSTEM/TIGER
+     USERNAME/PASSWORD :-   SYSTEM/TIGER
 
  SQL> 
 
