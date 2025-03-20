@@ -466,7 +466,7 @@ nchar/nvarchar2/nclob :-      (n  => national)
 => allows unicode chars (65536 chars)  that includes chars of different
      languages.
 
-Number(p) :- 
+Number(p) // here p is number of digits:- 
 -----------------
 
  => allows numeric data upto 38 digits
