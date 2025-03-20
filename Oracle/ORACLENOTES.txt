@@ -239,7 +239,7 @@ client :-
  ---------
  
  => SQL stands for structured query language.
- => language used to communicate with oracle.
+ => language used to communicate with database.
  => user communicates with oracle by sending commands called queries.
  => a query is a command/instruction/question submitted to oracle to
       perform some operation over db.
