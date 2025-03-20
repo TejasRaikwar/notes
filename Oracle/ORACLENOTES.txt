@@ -240,8 +240,8 @@ client :-
  
  => SQL stands for structured query language.
  => language used to communicate with database.
- => user communicates with oracle by sending commands called queries.
- => a query is a command/instruction/question submitted to oracle to
+ => user communicates with database by sending commands called queries.
+ => a query is a command/instruction/question submitted to database to
       perform some operation over db.
 =>  SQL is originally introduced by IBM and initial name of this lang was
       "SEQUEL"  and later it is renamed to SQL.
@@ -263,13 +263,13 @@ client :-
 		
 		               		 SQL
 
- 	DDL		   DML	     DQL	     TCL		   DCL
+ 	DDL	      DML	     DQL	     TCL		   DCL
   
-	CREATE	  INSERT	     SELECT	COMMIT	   GRANT
-	ALTER	  UPDATE		          ROLLBACK	   REVOKE
-	DROP		  DELETE		          SAVEPOINT
-	TRUNCATE	  MERGE
-	RENAME	  INSERT ALL
+	CREATE	     INSERT	    SELECT	    COMMIT	          GRANT
+	ALTER	     UPDATE		           ROLLBACK	          REVOKE
+	DROP.        DELETE		           SAVEPOINT
+	TRUNCATE.    MERGE
+	RENAME	    INSERT ALL
 	FLASHBACK
 	PURGE
  
