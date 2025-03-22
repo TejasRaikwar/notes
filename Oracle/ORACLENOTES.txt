@@ -1203,10 +1203,13 @@ ORDER BY :-
 handling nulls in sorting :-
 -----------------------------------
 
- => in order by   nulls treated high
+ => in order by nulls treated high.
  => in ascending order nulls displayed last
  => in descending orders nulls displayed first
  => to control this use NULLS  LAST/FIRST option
+
+
+Note : its opposite in mysql 
 
  ex :- 
 
