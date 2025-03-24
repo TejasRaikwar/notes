@@ -1690,9 +1690,9 @@ TRUNCATE :-
 DELETE VS TRUNCATE :- 
 -----------------------------------
 
-	DELETE				TRUNCATE
+		 	DELETE						TRUNCATE
 
-1	DML				 DDL
+1	               DML			                      	     DDL
 
 2              can delete specific rows                            can't delete specific rows
 
