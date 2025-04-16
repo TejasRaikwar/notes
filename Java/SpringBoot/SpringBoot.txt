@@ -1,0 +1,4 @@
+1. Annotations :
+     @SpringBootApplication
+          this Annotation is used to mark the main class of springboot application
+          
