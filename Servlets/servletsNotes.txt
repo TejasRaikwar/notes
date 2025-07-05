@@ -1,0 +1,24 @@
+servlet is a server-side technology, which is used to :
+    - handle the client request
+    - process the request
+    - generate dynamic response
+
+Web servers :
+    - Apache tomcat
+    - glassfish
+    - jetty
+
+Application Servers : 
+    - jboss
+    - web logic
+    - web sphere
+
+Application servers are more advanced servers as compared to web servers.
+
+
+apche tomcat server containes multiple containers like :
+    - servlet container
+    - jsp container
+    - security container
+    - websocket container
+    - JNDI container

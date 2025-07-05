@@ -1,0 +1,34 @@
+- Data structures are ways to store and organize data so you can use it effectively. 
+- An array is an example of a data structure, which allows multiple elements to be stored in a single variable.
+- java includes many other data structures as well, in java.util package. each is used to handle data in different ways.
+          -- ArrayList
+          -- LinkedList
+          -- HashSet
+          -- HashMap
+  
+
+
+ArrayList : 
+    Class ArrayList<E> : 
+                java.lang.Object
+                    java.util.AbstractCollection<E>
+                        java.util.AbstractList<E>
+                            java.util.ArrayList<E>
+    Type parameters : 
+         E -> type of elements in this list
+    
+    All implemented interfaces : 
+        Serializable, clonable, Iterable<E>, Collection<E>, List<E>, RandomAccess, SequencedCollection<E>
+    
+    
+        public class ArrayList<E> extends AbstractList implements   List<E>, RandomAccess, Clonable, Serializable
+
+
+    Note : this implementation is not synchronized. if multiple threads access an ArrayList instance concurrently, and at least one of the threads modifies the list structurally it must be synchronized externally. 
+    for that : Colletions.synchronizedList method
+
+    List list = Collections.synchronizedList(new ArrayList(----));
+
+
+LinkedList : 
+    
